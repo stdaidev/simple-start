@@ -17,7 +17,7 @@ Proof required: P1 (visual, screenshot do preview)
 | ID | Descricao | AC | Arquivos esperados | Verificacao | State |
 |----|-----------|----|--------------------|-------------|-------|
 | T1 | Definir tokens semanticos (paleta Lovbeauty, tipografia display+sans, radius) e carregar fontes via `<link>` no head do root | AC1 | `src/styles.css`, `src/routes/__root.tsx` | inspecionar `:root`/`.dark` e preview sem erros | proof-pending |
-| T2 | Reescrever a rota `/` com hero (nome + tagline + CTA), 3 blocos de categorias (skincare, cabelo, corpo) e rodape minimo usando tokens | AC2, AC3, AC4 | `src/routes/index.tsx` | preview renderiza secoes, screenshot desktop | ready |
+| T2 | Reescrever a rota `/` com hero (nome + tagline + CTA), 3 blocos de categorias (skincare, cabelo, corpo) e rodape minimo usando tokens | AC2, AC3, AC4 | `src/routes/index.tsx` | preview renderiza secoes, screenshot desktop | proof-pending |
 | T3 | Ajustar `head()` da rota `/` com title, description, og:title, og:description especificos da Lovbeauty | AC5 | `src/routes/index.tsx` | `document.title` e meta tags conferidos no preview | ready |
 
 ## Arquivos alterados
