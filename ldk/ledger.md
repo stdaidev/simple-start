@@ -4,7 +4,7 @@ Estados válidos: idea | planned | approved | building | proof-pending | done | 
 
 | ID | Feature | Risk | State | Proof required | Last evidence |
 |----|---------|------|-------|----------------|---------------|
-| F1 | Identidade & landing | baixo | approved | P1 | |
+| F1 | Identidade & landing | baixo | building | P1 | |
 | F2 | Catálogo (15 produtos fictícios em 3 categorias) | baixo | idea | P2 | |
 | F3 | Página de detalhe do produto | baixo | idea | P2 | |
 | F4 | Carrinho local | baixo | idea | P2 | |
