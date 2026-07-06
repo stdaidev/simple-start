@@ -68,7 +68,7 @@
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
 
   --background: oklch(0.985 0.008 60);          /* off-white cremoso */
   --foreground: oklch(0.24 0.02 20);            /* grafite quente */
