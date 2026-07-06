@@ -22,10 +22,10 @@ Proof required: P2 (fluxo manual — abrir `/produtos`, filtrar por categoria, v
 
 | ID | Descricao | AC | Arquivos esperados | Verificacao | State |
 |----|-----------|----|--------------------|-------------|-------|
-| T1 | Criar dataset ficticio com 15 produtos (5 por categoria) tipado | AC1 | `src/data/products.ts` | inspecionar array com 15 itens e 3 categorias | ready |
-| T2 | Criar componente `ProductCard` reutilizando tokens Blush & Lavender e formatacao BRL | AC2, AC6 | `src/components/ProductCard.tsx` | preview do card no grid | ready |
-| T3 | Criar rota `/produtos` com grid responsivo, filtro por categoria (chips) e head() proprio | AC2, AC3, AC5, AC6 | `src/routes/produtos.tsx` | abrir `/produtos`, clicar filtros, ver title | ready |
-| T4 | Trocar CTA "Descobrir a colecao" da landing por `<Link to="/produtos">` | AC4 | `src/routes/index.tsx` | clicar CTA, ver navegacao SPA | ready |
+| T1 | Criar dataset ficticio com 15 produtos (5 por categoria) tipado | AC1 | `src/data/products.ts` | inspecionar array com 15 itens e 3 categorias | done |
+| T2 | Criar componente `ProductCard` reutilizando tokens Blush & Lavender e formatacao BRL | AC2, AC6 | `src/components/ProductCard.tsx` | preview do card no grid | done |
+| T3 | Criar rota `/produtos` com grid responsivo, filtro por categoria (chips) e head() proprio | AC2, AC3, AC5, AC6 | `src/routes/produtos.tsx` | abrir `/produtos`, clicar filtros, ver title | done |
+| T4 | Trocar CTA "Descobrir a colecao" da landing por `<Link to="/produtos">` | AC4 | `src/routes/index.tsx` | clicar CTA, ver navegacao SPA | done |
 
 ## Arquivos criados/alterados
 - `src/data/products.ts` (novo)
