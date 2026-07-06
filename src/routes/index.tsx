@@ -3,9 +3,25 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Testando LDK" },
-      { name: "description", content: "Testando LDK" },
+      { title: "Lovbeauty — Rituais de beleza autoral brasileira" },
+      {
+        name: "description",
+        content:
+          "Lovbeauty: curadoria brasileira de skincare, cabelo e corpo para mulheres de 20 a 45 que querem cuidar de si sem complicar.",
+      },
+      {
+        property: "og:title",
+        content: "Lovbeauty — Rituais de beleza autoral brasileira",
+      },
+      {
+        property: "og:description",
+        content:
+          "Curadoria brasileira de skincare, cabelo e corpo. Beleza autêntica, fórmulas eficazes e ritual sem complicação.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });
