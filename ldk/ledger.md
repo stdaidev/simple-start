@@ -5,7 +5,7 @@ Estados válidos: idea | planned | approved | building | proof-pending | done | 
 | ID | Feature | Risk | State | Proof required | Last evidence |
 |----|---------|------|-------|----------------|---------------|
 | F1 | Identidade & landing | baixo | done | P1 | ldk/features/f1-identidade-landing/proof.md |
-| F2 | Catálogo (15 produtos fictícios em 3 categorias) | baixo | planned | P2 | |
+| F2 | Catálogo (15 produtos fictícios em 3 categorias) | baixo | approved | P2 | |
 | F3 | Página de detalhe do produto | baixo | idea | P2 | |
 | F4 | Carrinho local | baixo | idea | P2 | |
 | F5 | Checkout simulado | baixo | idea | P2 | |
