@@ -2,14 +2,14 @@
 
 Estados válidos: idea | planned | approved | building | proof-pending | done | partial | blocked | reopened
 
-| Feature | Estado | Risco | Prova mínima | Proof | Notas |
-|---|---|---|---|---|---|
-| F01 — Identidade & landing | idea | baixo | P1 | — | Hero, tom da marca, navegação básica. |
-| F02 — Catálogo (15 produtos fictícios em 3 categorias) | idea | baixo | P1/P2 | — | Skincare, cabelo, corpo. Dados mock no client. |
-| F03 — Página de detalhe do produto | idea | baixo | P1/P2 | — | Depende de F02. |
-| F04 — Carrinho local | idea | baixo | P2 | — | Estado client-side. Depende de F02. |
-| F05 — Checkout simulado | idea | baixo | P2 | — | Formulário fictício + confirmação fake. Depende de F04. |
-| F06 — Pagamento real | idea | alto | P4 | — | Fora do MVP. Provedor [VERIFY]. |
-| F07 — Frete real | idea | alto | P4 | — | Fora do MVP. [VERIFY]. |
-| F08 — Auth do cliente | idea | alto | P4 | — | Fora do MVP. [VERIFY]. |
-| F09 — Admin de produtos/pedidos | idea | alto | P4 | — | Fora do MVP. Depende de auth. |
+| ID | Feature | Risk | State | Proof required | Last evidence |
+|----|---------|------|-------|----------------|---------------|
+| F1 | Identidade & landing | baixo | idea | P1 | |
+| F2 | Catálogo (15 produtos fictícios em 3 categorias) | baixo | idea | P2 | |
+| F3 | Página de detalhe do produto | baixo | idea | P2 | |
+| F4 | Carrinho local | baixo | idea | P2 | |
+| F5 | Checkout simulado | baixo | idea | P2 | |
+| F6 | Pagamento real | alto | idea | P4 | |
+| F7 | Frete real | alto | idea | P4 | |
+| F8 | Auth do cliente | alto | idea | P4 | |
+| F9 | Admin de produtos/pedidos | alto | idea | P4 | |
