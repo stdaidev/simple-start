@@ -22,9 +22,9 @@ Proof required: P1 (visual, screenshot do preview)
 
 | ID | Descricao | AC | Arquivos esperados | Verificacao | State |
 |----|-----------|----|--------------------|-------------|-------|
-| T1 | Definir tokens semanticos Blush & Lavender (paleta, tipografia Abril Fatface + Cabin, radius, gradientes) e carregar fontes via `<link>` no head do root | AC1 | `src/styles.css`, `src/routes/__root.tsx` | inspecionar `:root`/`.dark` e preview sem erros | proof-pending |
-| T2 | Reescrever a rota `/` com hero asymmetric 60/40 (nome Lov/beauty, tagline, CTAs), 3 categorias com raios assimetricos e offset central, rodape minimo usando tokens Blush & Lavender | AC2, AC3, AC4 | `src/routes/index.tsx` | preview renderiza secoes, screenshot desktop | proof-pending |
-| T3 | Ajustar `head()` da rota `/` com title, description, og:title, og:description especificos da Lovbeauty | AC5 | `src/routes/index.tsx` | `document.title` e meta tags conferidos no preview | ready |
+| T1 | Definir tokens semanticos Blush & Lavender (paleta, tipografia Abril Fatface + Cabin, radius, gradientes) e carregar fontes via `<link>` no head do root | AC1 | `src/styles.css`, `src/routes/__root.tsx` | inspecionar `:root`/`.dark` e preview sem erros | done |
+| T2 | Reescrever a rota `/` com hero asymmetric 60/40 (nome Lov/beauty, tagline, CTAs), 3 categorias com raios assimetricos e offset central, rodape minimo usando tokens Blush & Lavender | AC2, AC3, AC4 | `src/routes/index.tsx` | preview renderiza secoes, screenshot desktop | done |
+| T3 | Ajustar `head()` da rota `/` com title, description, og:title, og:description especificos da Lovbeauty | AC5 | `src/routes/index.tsx` | `document.title` e meta tags conferidos no preview | done |
 
 ## Arquivos alterados
 - `src/styles.css`
