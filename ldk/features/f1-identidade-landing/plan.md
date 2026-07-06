@@ -13,9 +13,12 @@ Proof required: P1 (visual, screenshot do preview)
 - AC6: Build passa e preview abre sem erros no console.
 
 ## Tasks
-- T1: Definir tokens no `src/styles.css` (paleta, fontes via `<link>` no `__root.tsx` head, radius). Verificação: inspecionar `:root` e `.dark`, checar preview.
-- T2: Reescrever `src/routes/index.tsx` com hero + categorias + rodapé usando tokens. Verificação: preview renderiza, screenshot.
-- T3: Ajustar `head()` da rota `/` (title, description, og:title, og:description). Verificação: `document.title` e meta tags no preview.
+
+| ID | Descricao | AC | Arquivos esperados | Verificacao | State |
+|----|-----------|----|--------------------|-------------|-------|
+| T1 | Definir tokens semanticos (paleta Lovbeauty, tipografia display+sans, radius) e carregar fontes via `<link>` no head do root | AC1 | `src/styles.css`, `src/routes/__root.tsx` | inspecionar `:root`/`.dark` e preview sem erros | proof-pending |
+| T2 | Reescrever a rota `/` com hero (nome + tagline + CTA), 3 blocos de categorias (skincare, cabelo, corpo) e rodape minimo usando tokens | AC2, AC3, AC4 | `src/routes/index.tsx` | preview renderiza secoes, screenshot desktop | ready |
+| T3 | Ajustar `head()` da rota `/` com title, description, og:title, og:description especificos da Lovbeauty | AC5 | `src/routes/index.tsx` | `document.title` e meta tags conferidos no preview | ready |
 
 ## Arquivos alterados
 - `src/styles.css`
