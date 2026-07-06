@@ -74,65 +74,72 @@
 
 
 :root {
-  --radius: 0.875rem;
+  --radius: 1.25rem;
 
-  /* Lovbeauty base — warm cream canvas, deep plum ink */
-  --background: oklch(0.985 0.012 60);
-  --foreground: oklch(0.22 0.045 350);
+  /* Lovbeauty — Blush & Lavender editorial */
+  /* Base cream-blush #FFF9FA */
+  --background: oklch(0.985 0.008 350);
+  /* Deep plum-ink #4A3B3E */
+  --foreground: oklch(0.34 0.02 0);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.045 350);
+  --card-foreground: oklch(0.34 0.02 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.045 350);
+  --popover-foreground: oklch(0.34 0.02 0);
 
-  /* Primary: deep rose/plum — brand ink for CTA and headings accents */
-  --primary: oklch(0.48 0.14 5);
-  --primary-foreground: oklch(0.985 0.012 60);
-  --primary-soft: oklch(0.72 0.11 10);
+  /* Primary: lavender #A997D0 — brand accent for CTA/links */
+  --primary: oklch(0.68 0.09 300);
+  --primary-foreground: oklch(0.28 0.06 300);
+  --primary-soft: oklch(0.86 0.06 300);
 
-  /* Secondary: warm cream stone */
-  --secondary: oklch(0.955 0.018 55);
-  --secondary-foreground: oklch(0.28 0.05 350);
+  /* Secondary: soft blush wash */
+  --secondary: oklch(0.94 0.025 355);
+  --secondary-foreground: oklch(0.34 0.02 0);
 
-  --muted: oklch(0.955 0.018 55);
-  --muted-foreground: oklch(0.48 0.03 350);
+  --muted: oklch(0.94 0.025 355);
+  --muted-foreground: oklch(0.5 0.015 0);
 
-  /* Accent: soft blush */
-  --accent: oklch(0.92 0.045 15);
-  --accent-foreground: oklch(0.28 0.05 350);
+  /* Accent: pale lavender #D8D1F5 */
+  --accent: oklch(0.9 0.04 295);
+  --accent-foreground: oklch(0.28 0.06 300);
 
-  /* Signature named tokens */
-  --blush: oklch(0.88 0.06 20);
-  --cream: oklch(0.97 0.02 70);
-  --plum: oklch(0.28 0.08 350);
+  /* Signature named tokens (Blush & Lavender) */
+  --blush: oklch(0.9 0.045 355);    /* #FAD2E1 */
+  --cream: oklch(0.985 0.008 350);  /* #FFF9FA */
+  --plum: oklch(0.34 0.02 0);       /* #4A3B3E */
+  --lavender: oklch(0.68 0.09 300); /* #A997D0 */
+  --lavender-soft: oklch(0.9 0.04 295); /* #D8D1F5 */
+  --blush-soft: oklch(0.94 0.028 15); /* #FDE2E4 */
+  --iris-soft: oklch(0.93 0.03 285); /* #E2E2FF */
   --gold: oklch(0.78 0.09 80);
 
   --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(0.985 0.012 60);
+  --destructive-foreground: oklch(0.985 0.008 350);
 
-  --border: oklch(0.9 0.02 30);
-  --input: oklch(0.9 0.02 30);
-  --ring: oklch(0.48 0.14 5);
+  --border: oklch(0.88 0.035 355);
+  --input: oklch(0.88 0.035 355);
+  --ring: oklch(0.68 0.09 300);
 
-  --chart-1: oklch(0.48 0.14 5);
-  --chart-2: oklch(0.72 0.11 10);
-  --chart-3: oklch(0.78 0.09 80);
-  --chart-4: oklch(0.62 0.14 30);
-  --chart-5: oklch(0.4 0.1 350);
+  --chart-1: oklch(0.68 0.09 300);
+  --chart-2: oklch(0.9 0.045 355);
+  --chart-3: oklch(0.86 0.06 300);
+  --chart-4: oklch(0.62 0.14 15);
+  --chart-5: oklch(0.4 0.06 305);
 
-  --sidebar: oklch(0.97 0.02 70);
-  --sidebar-foreground: oklch(0.22 0.045 350);
-  --sidebar-primary: oklch(0.48 0.14 5);
-  --sidebar-primary-foreground: oklch(0.985 0.012 60);
-  --sidebar-accent: oklch(0.92 0.045 15);
-  --sidebar-accent-foreground: oklch(0.28 0.05 350);
-  --sidebar-border: oklch(0.9 0.02 30);
-  --sidebar-ring: oklch(0.48 0.14 5);
+  --sidebar: oklch(0.985 0.008 350);
+  --sidebar-foreground: oklch(0.34 0.02 0);
+  --sidebar-primary: oklch(0.68 0.09 300);
+  --sidebar-primary-foreground: oklch(0.985 0.008 350);
+  --sidebar-accent: oklch(0.9 0.04 295);
+  --sidebar-accent-foreground: oklch(0.28 0.06 300);
+  --sidebar-border: oklch(0.88 0.035 355);
+  --sidebar-ring: oklch(0.68 0.09 300);
 
-  --gradient-hero-value: linear-gradient(135deg, oklch(0.97 0.02 70) 0%, oklch(0.92 0.045 15) 60%, oklch(0.88 0.06 20) 100%);
-  --gradient-blush-value: linear-gradient(180deg, oklch(0.985 0.012 60) 0%, oklch(0.94 0.035 20) 100%);
-  --shadow-soft-value: 0 10px 30px -12px oklch(0.28 0.08 350 / 0.18);
-  --shadow-elegant-value: 0 24px 60px -20px oklch(0.28 0.08 350 / 0.28);
+  --gradient-hero-value: linear-gradient(135deg, oklch(0.985 0.008 350) 0%, oklch(0.94 0.028 15) 55%, oklch(0.9 0.04 295) 100%);
+  --gradient-blush-value: linear-gradient(180deg, oklch(0.94 0.028 15) 0%, oklch(0.9 0.045 355) 100%);
+  --gradient-lavender-value: linear-gradient(160deg, oklch(0.93 0.03 285) 0%, oklch(0.86 0.06 300) 100%);
+  --shadow-soft-value: 0 12px 32px -14px oklch(0.34 0.02 0 / 0.14);
+  --shadow-elegant-value: 0 28px 60px -22px oklch(0.4 0.06 305 / 0.28);
 }
 
 
