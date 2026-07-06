@@ -72,6 +72,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --gradient-hero: var(--gradient-hero-value);
   --gradient-blush: var(--gradient-blush-value);
+  --gradient-lavender: var(--gradient-lavender-value);
   --shadow-soft: var(--shadow-soft-value);
   --shadow-elegant: var(--shadow-elegant-value);
 }
