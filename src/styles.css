@@ -44,8 +44,12 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-blush: var(--blush);
+  --color-blush-soft: var(--blush-soft);
   --color-cream: var(--cream);
   --color-plum: var(--plum);
+  --color-lavender: var(--lavender);
+  --color-lavender-soft: var(--lavender-soft);
+  --color-iris-soft: var(--iris-soft);
   --color-gold: var(--gold);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
