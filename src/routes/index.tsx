@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -112,12 +112,12 @@ function Index() {
                 cabelo e corpo para quem quer cuidar de si sem complicar.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="#categorias"
+                <Link
+                  to="/produtos"
                   className="inline-flex items-center rounded-full bg-lavender-soft px-8 py-4 text-sm font-bold tracking-wide text-plum shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:bg-lavender hover:text-primary-foreground"
                 >
                   Descobrir a coleção
-                </a>
+                </Link>
                 <a
                   href="#sobre"
                   className="inline-flex items-center rounded-full border border-border px-8 py-4 text-sm font-semibold tracking-wide text-plum transition-colors hover:border-lavender hover:text-lavender"
