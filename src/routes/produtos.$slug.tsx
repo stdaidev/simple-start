@@ -10,18 +10,6 @@ const categoryLabel: Record<Product["category"], string> = {
   corpo: "Corpo",
 };
 
-const surfaceMap: Record<Product["surface"], string> = {
-  blush: "bg-blush",
-  "blush-soft": "bg-blush-soft",
-  "iris-soft": "bg-iris-soft",
-  "lavender-soft": "bg-lavender-soft",
-};
-
-const gradientMap: Record<Product["gradient"], string> = {
-  blush: "var(--gradient-blush)",
-  lavender: "var(--gradient-lavender)",
-  hero: "var(--gradient-hero)",
-};
 
 type CategoryCopy = {
   uso: string;
