@@ -1,5 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CartButton } from "@/components/CartButton";
+import heroBanner from "@/assets/hero-banner.jpg";
+import catSkincare from "@/assets/cat-skincare.jpg";
+import catCabelo from "@/assets/cat-cabelo.jpg";
+import catCorpo from "@/assets/cat-corpo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

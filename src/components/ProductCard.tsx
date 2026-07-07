@@ -1,19 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { formatBRL, type Product } from "@/data/products";
 
-const surfaceMap: Record<Product["surface"], string> = {
-  blush: "bg-blush",
-  "blush-soft": "bg-blush-soft",
-  "iris-soft": "bg-iris-soft",
-  "lavender-soft": "bg-lavender-soft",
-};
-
-const gradientMap: Record<Product["gradient"], string> = {
-  blush: "var(--gradient-blush)",
-  lavender: "var(--gradient-lavender)",
-  hero: "var(--gradient-hero)",
-};
-
 const categoryLabel: Record<Product["category"], string> = {
   skincare: "Skincare",
   cabelo: "Cabelo",
@@ -33,13 +20,14 @@ export function ProductCard({ product, offset }: Props) {
       className={`group flex flex-col gap-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-lavender focus-visible:ring-offset-4 focus-visible:ring-offset-background ${offset ? "md:translate-y-8" : ""}`}
     >
       <article className="flex flex-col gap-5">
-        <div
-          className={`relative aspect-[4/5] overflow-hidden rounded-tr-[80px] rounded-bl-[32px] ${surfaceMap[product.surface]}`}
-        >
-          <div
-            className="absolute inset-5 rounded-3xl opacity-80 transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: gradientMap[product.gradient] }}
-            aria-hidden
+        <div className="relative aspect-[4/5] overflow-hidden rounded-tr-[80px] rounded-bl-[32px] bg-blush-soft">
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            width={1024}
+            height={1024}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <span className="absolute left-5 top-5 rounded-full bg-background/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-plum backdrop-blur">
             {categoryLabel[product.category]}
