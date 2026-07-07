@@ -60,3 +60,14 @@ Nao registrar segredos, tokens, PII ou prompt completo sensivel.
 - Decision: other (reconciliacao)
 - Known limitations: audit log nao existia antes desta entrada; entradas anteriores sao backfill resumido.
 - Next: ldk-plan de F4
+
+## 2026-07-07 - ldk-plan - F4 carrinho local
+- Command: ldk-plan
+- User intent: planejar carrinho local com persistencia
+- State before: F4 idea
+- Actions: brief.md e plan.md com T1-T6, AC1-AC8, decisao por sonner (Toaster ja instalado); ledger F4 idea -> planned -> approved
+- Files changed: ldk/features/f4-carrinho/brief.md (novo), ldk/features/f4-carrinho/plan.md (novo), ldk/ledger.md, ldk/audit/log.md
+- Evidence: preview na; manual na; tests na; console na; diff na
+- Decision: approved
+- Known limitations: none
+- Next: ldk-build de F4
