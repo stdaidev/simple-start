@@ -6,6 +6,17 @@ Nao registrar segredos, tokens, PII ou prompt completo sensivel.
 
 ---
 
+## 2026-07-07 - ldk-build - F5 checkout simulado
+- Command: ldk-build
+- User intent: executar F5 e provar
+- State before: F5 approved; T1-T5 ready
+- Actions: criados checkout-schema, checkout.index, checkout.confirmado; CTAs Finalizar compra habilitadas no CartDrawer e /carrinho; playwright P2
+- Files changed: src/lib/checkout-schema.ts, src/routes/checkout.index.tsx, src/routes/checkout.confirmado.tsx, src/components/CartDrawer.tsx, src/routes/carrinho.tsx, ldk/features/f5-checkout/{plan,proof}.md, ldk/ledger.md
+- Evidence: preview yes; manual yes; tests na; console yes (warnings pre-existentes de hydration em __root.tsx nao introduzidos por F5); diff yes
+- Decision: DONE
+- Known limitations: mascara de CEP/telefone livre (validacao por digitos); history state some em hard reload -> fallback ativo
+- Next: MVP fechado; F6/F7/F8/F9 fora do escopo ate decisao explicita
+
 ## 2026-07-07 - ldk-plan - F5 checkout simulado (approved)
 - Command: ldk-plan
 - User intent: aprovar plano F5

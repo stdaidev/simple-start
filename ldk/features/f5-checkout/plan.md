@@ -25,11 +25,11 @@ Proof required: P2
 
 | ID | Descricao | AC | Arquivos esperados | Verificacao | State |
 |----|-----------|----|--------------------|-------------|-------|
-| T1 | Instalar/confirmar deps `react-hook-form`, `@hookform/resolvers`, `zod` (ja presentes) e criar schema+tipos em `src/lib/checkout-schema.ts` | AC2 | `src/lib/checkout-schema.ts` | tsgo passa; schema valida ok/erro em unit-check manual | ready |
-| T2 | Criar rota `/checkout` com form (RHF+zod) + resumo, estado vazio, e submit que gera orderNumber, faz snapshot, limpa carrinho e navega para `/checkout/confirmado` com state | AC1, AC2, AC3, AC5, AC7, AC8 | `src/routes/checkout.index.tsx` | preview: preencher form invalido -> erros; valido -> navega e limpa | ready |
-| T3 | Criar rota `/checkout/confirmado` com leitura do state, fallback e CTAs; head() proprio | AC6, AC8 | `src/routes/checkout.confirmado.tsx` | preview: acessar direto mostra fallback; via fluxo mostra pedido | ready |
-| T4 | Habilitar CTA "Finalizar compra" em `CartDrawer` e `/carrinho`, removendo copy "em F5" e disabled | AC4, AC8 | `src/components/CartDrawer.tsx`, `src/routes/carrinho.tsx` | clicar leva a `/checkout` com itens | ready |
-| T5 | Auditar que nenhum campo PII e persistido/logado (grep) e checar console limpo | AC7, AC8 | (nenhum novo) | grep + preview | ready |
+| T1 | Instalar/confirmar deps `react-hook-form`, `@hookform/resolvers`, `zod` (ja presentes) e criar schema+tipos em `src/lib/checkout-schema.ts` | AC2 | `src/lib/checkout-schema.ts` | tsgo passa; schema valida ok/erro em unit-check manual | done |
+| T2 | Criar rota `/checkout` com form (RHF+zod) + resumo, estado vazio, e submit que gera orderNumber, faz snapshot, limpa carrinho e navega para `/checkout/confirmado` com state | AC1, AC2, AC3, AC5, AC7, AC8 | `src/routes/checkout.index.tsx` | preview: preencher form invalido -> erros; valido -> navega e limpa | done |
+| T3 | Criar rota `/checkout/confirmado` com leitura do state, fallback e CTAs; head() proprio | AC6, AC8 | `src/routes/checkout.confirmado.tsx` | preview: acessar direto mostra fallback; via fluxo mostra pedido | done |
+| T4 | Habilitar CTA "Finalizar compra" em `CartDrawer` e `/carrinho`, removendo copy "em F5" e disabled | AC4, AC8 | `src/components/CartDrawer.tsx`, `src/routes/carrinho.tsx` | clicar leva a `/checkout` com itens | done |
+| T5 | Auditar que nenhum campo PII e persistido/logado (grep) e checar console limpo | AC7, AC8 | (nenhum novo) | grep + preview | done |
 
 ## Arquivos criados/alterados
 - `src/lib/checkout-schema.ts` (novo)
