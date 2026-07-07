@@ -1,5 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CartButton } from "@/components/CartButton";
+import heroBanner from "@/assets/hero-banner.jpg";
+import catSkincare from "@/assets/cat-skincare.jpg";
+import catCabelo from "@/assets/cat-cabelo.jpg";
+import catCorpo from "@/assets/cat-corpo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,8 +37,7 @@ const categories = [
     tagline: "Rituais de pele que respeitam o seu tempo",
     description:
       "Séruns, hidratantes e protetores para uma rotina simples e eficaz.",
-    surface: "bg-blush",
-    accent: "bg-blush-soft",
+    image: catSkincare,
     radius: "rounded-tr-[100px] rounded-bl-[40px]",
   },
   {
@@ -42,8 +45,7 @@ const categories = [
     tagline: "Fios com brilho, movimento e cuidado real",
     description:
       "Do shampoo ao finalizador, fórmulas pensadas para cada textura.",
-    surface: "bg-iris-soft",
-    accent: "bg-lavender-soft",
+    image: catCabelo,
     radius: "rounded-tl-[100px] rounded-br-[40px]",
     offset: true,
   },
@@ -52,8 +54,7 @@ const categories = [
     tagline: "Cuidado sensorial da cabeça aos pés",
     description:
       "Óleos, hidratantes e esfoliantes para transformar o banho em ritual.",
-    surface: "bg-blush-soft",
-    accent: "bg-blush",
+    image: catCorpo,
     radius: "rounded-tr-[40px] rounded-bl-[100px]",
   },
 ];
@@ -87,19 +88,18 @@ function Index() {
                 style={{ background: "var(--lavender-soft)" }}
                 aria-hidden
               />
-              <div
-                className="relative z-10 aspect-[4/3] w-full overflow-hidden rounded-[40px] shadow-[var(--shadow-elegant)]"
-                style={{ backgroundImage: "var(--gradient-blush)" }}
-              >
-                <div className="flex h-full flex-col justify-between p-10">
-                  <span className="inline-flex w-fit rounded-full bg-background/70 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum backdrop-blur">
+              <div className="relative z-10 aspect-[16/9] w-full overflow-hidden rounded-[40px] shadow-[var(--shadow-elegant)]">
+                <img
+                  src={heroBanner}
+                  alt="Composição de produtos Lovbeauty sobre linho amarrotado com pétalas de rosa e lavanda seca"
+                  width={1920}
+                  height={1080}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-start p-8 md:p-10">
+                  <span className="inline-flex w-fit rounded-full bg-background/80 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum backdrop-blur">
                     Beleza autoral · 20 a 45
                   </span>
-                  <div
-                    className="ml-auto h-40 w-40 rounded-full opacity-80"
-                    style={{ backgroundImage: "var(--gradient-lavender)" }}
-                    aria-hidden
-                  />
                 </div>
               </div>
             </div>
@@ -152,14 +152,18 @@ function Index() {
                   }`}
                 >
                   <div
-                    className={`relative aspect-[3/4] overflow-hidden ${cat.radius} ${cat.surface}`}
+                    className={`relative aspect-[3/4] overflow-hidden bg-blush-soft ${cat.radius}`}
                   >
-                    <div
-                      className={`absolute inset-6 rounded-3xl opacity-70 transition-transform duration-700 group-hover:scale-105 ${cat.accent}`}
-                      aria-hidden
+                    <img
+                      src={cat.image}
+                      alt={`Composição ${cat.name.toLowerCase()} Lovbeauty`}
+                      loading="lazy"
+                      width={1024}
+                      height={1024}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 flex items-end p-8">
-                      <h3 className="font-display text-3xl text-plum">
+                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/30 via-transparent to-transparent p-8">
+                      <h3 className="font-display text-3xl text-primary-foreground drop-shadow-md">
                         {cat.name}
                       </h3>
                     </div>

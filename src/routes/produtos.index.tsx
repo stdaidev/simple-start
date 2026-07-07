@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import { CartButton } from "@/components/CartButton";
 import { CATEGORIES, products, type Category } from "@/data/products";
+import heroBanner from "@/assets/hero-banner.jpg";
 
 type Filter = Category | "todos";
 
@@ -81,11 +82,15 @@ function Produtos() {
                 sensorial.
               </p>
             </div>
-            <div
-              className="hidden aspect-square rounded-[40px] shadow-[var(--shadow-elegant)] md:block"
-              style={{ backgroundImage: "var(--gradient-lavender)" }}
-              aria-hidden
-            />
+            <div className="hidden aspect-square overflow-hidden rounded-[40px] bg-blush-soft shadow-[var(--shadow-elegant)] md:block">
+              <img
+                src={heroBanner}
+                alt="Coleção Lovbeauty"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </section>
 
           <section className="space-y-10">

@@ -10,19 +10,6 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 
-const surfaceMap: Record<Product["surface"], string> = {
-  blush: "bg-blush",
-  "blush-soft": "bg-blush-soft",
-  "iris-soft": "bg-iris-soft",
-  "lavender-soft": "bg-lavender-soft",
-};
-
-const gradientMap: Record<Product["gradient"], string> = {
-  blush: "var(--gradient-blush)",
-  lavender: "var(--gradient-lavender)",
-  hero: "var(--gradient-hero)",
-};
-
 const categoryLabel: Record<Product["category"], string> = {
   skincare: "Skincare",
   cabelo: "Cabelo",
@@ -71,13 +58,12 @@ export function CartDrawer() {
                 key={product.id}
                 className="flex gap-4 rounded-2xl border border-blush/60 p-3"
               >
-                <div
-                  className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl ${surfaceMap[product.surface]}`}
-                >
-                  <div
-                    className="absolute inset-2 rounded-lg opacity-80"
-                    style={{ backgroundImage: gradientMap[product.gradient] }}
-                    aria-hidden
+                <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-blush-soft">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-2">

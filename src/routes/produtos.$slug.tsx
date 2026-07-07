@@ -10,18 +10,6 @@ const categoryLabel: Record<Product["category"], string> = {
   corpo: "Corpo",
 };
 
-const surfaceMap: Record<Product["surface"], string> = {
-  blush: "bg-blush",
-  "blush-soft": "bg-blush-soft",
-  "iris-soft": "bg-iris-soft",
-  "lavender-soft": "bg-lavender-soft",
-};
-
-const gradientMap: Record<Product["gradient"], string> = {
-  blush: "var(--gradient-blush)",
-  lavender: "var(--gradient-lavender)",
-  hero: "var(--gradient-hero)",
-};
 
 type CategoryCopy = {
   uso: string;
@@ -117,15 +105,15 @@ function ProdutoDetalhe() {
           </Link>
 
           <article className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
-            <div
-              className={`relative aspect-square overflow-hidden rounded-tr-[120px] rounded-bl-[48px] ${surfaceMap[product.surface]}`}
-            >
-              <div
-                className="absolute inset-8 rounded-[40px] opacity-85"
-                style={{ backgroundImage: gradientMap[product.gradient] }}
-                aria-hidden
+            <div className="relative aspect-square overflow-hidden rounded-tr-[120px] rounded-bl-[48px] bg-blush-soft">
+              <img
+                src={product.image}
+                alt={product.name}
+                width={1024}
+                height={1024}
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <span className="absolute left-6 top-6 rounded-full bg-background/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum backdrop-blur">
+              <span className="absolute left-6 top-6 rounded-full bg-background/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum backdrop-blur">
                 {categoryLabel[product.category]}
               </span>
             </div>
