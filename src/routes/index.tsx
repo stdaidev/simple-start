@@ -37,8 +37,7 @@ const categories = [
     tagline: "Rituais de pele que respeitam o seu tempo",
     description:
       "Séruns, hidratantes e protetores para uma rotina simples e eficaz.",
-    surface: "bg-blush",
-    accent: "bg-blush-soft",
+    image: catSkincare,
     radius: "rounded-tr-[100px] rounded-bl-[40px]",
   },
   {
@@ -46,8 +45,7 @@ const categories = [
     tagline: "Fios com brilho, movimento e cuidado real",
     description:
       "Do shampoo ao finalizador, fórmulas pensadas para cada textura.",
-    surface: "bg-iris-soft",
-    accent: "bg-lavender-soft",
+    image: catCabelo,
     radius: "rounded-tl-[100px] rounded-br-[40px]",
     offset: true,
   },
@@ -56,8 +54,7 @@ const categories = [
     tagline: "Cuidado sensorial da cabeça aos pés",
     description:
       "Óleos, hidratantes e esfoliantes para transformar o banho em ritual.",
-    surface: "bg-blush-soft",
-    accent: "bg-blush",
+    image: catCorpo,
     radius: "rounded-tr-[40px] rounded-bl-[100px]",
   },
 ];
