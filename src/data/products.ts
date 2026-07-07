@@ -39,6 +39,7 @@ export const products: Product[] = [
   // Skincare
   {
     id: "sk-01",
+    image: imgSk01,
     slug: "serum-vitamina-c-radiancia",
     name: "Sérum Vitamina C Radiância",
     category: "skincare",
@@ -49,6 +50,7 @@ export const products: Product[] = [
   },
   {
     id: "sk-02",
+    image: imgSk02,
     slug: "hidratante-facial-diario",
     name: "Hidratante Facial Diário",
     category: "skincare",
@@ -59,6 +61,7 @@ export const products: Product[] = [
   },
   {
     id: "sk-03",
+    image: imgSk03,
     slug: "protetor-solar-fps50",
     name: "Protetor Solar FPS 50",
     category: "skincare",
@@ -69,6 +72,7 @@ export const products: Product[] = [
   },
   {
     id: "sk-04",
+    image: imgSk04,
     slug: "agua-micelar-suave",
     name: "Água Micelar Suave",
     category: "skincare",
@@ -79,6 +83,7 @@ export const products: Product[] = [
   },
   {
     id: "sk-05",
+    image: imgSk05,
     slug: "mascara-noturna-recuperadora",
     name: "Máscara Noturna Recuperadora",
     category: "skincare",
@@ -91,6 +96,7 @@ export const products: Product[] = [
   // Cabelo
   {
     id: "ca-01",
+    image: imgCa01,
     slug: "shampoo-nutritivo-rosas",
     name: "Shampoo Nutritivo Rosas",
     category: "cabelo",
@@ -101,6 +107,7 @@ export const products: Product[] = [
   },
   {
     id: "ca-02",
+    image: imgCa02,
     slug: "condicionador-brilho-seda",
     name: "Condicionador Brilho de Seda",
     category: "cabelo",
@@ -111,6 +118,7 @@ export const products: Product[] = [
   },
   {
     id: "ca-03",
+    image: imgCa03,
     slug: "mascara-reconstrutora-intensa",
     name: "Máscara Reconstrutora Intensa",
     category: "cabelo",
@@ -121,6 +129,7 @@ export const products: Product[] = [
   },
   {
     id: "ca-04",
+    image: imgCa04,
     slug: "leave-in-multibeneficio",
     name: "Leave-in Multibenefício",
     category: "cabelo",
@@ -131,6 +140,7 @@ export const products: Product[] = [
   },
   {
     id: "ca-05",
+    image: imgCa05,
     slug: "oleo-finalizador-lavanda",
     name: "Óleo Finalizador Lavanda",
     category: "cabelo",
@@ -143,6 +153,7 @@ export const products: Product[] = [
   // Corpo
   {
     id: "co-01",
+    image: imgCo01,
     slug: "hidratante-corporal-veludo",
     name: "Hidratante Corporal Veludo",
     category: "corpo",
@@ -153,6 +164,7 @@ export const products: Product[] = [
   },
   {
     id: "co-02",
+    image: imgCo02,
     slug: "oleo-corporal-flor-cerejeira",
     name: "Óleo Corporal Flor de Cerejeira",
     category: "corpo",
@@ -163,6 +175,7 @@ export const products: Product[] = [
   },
   {
     id: "co-03",
+    image: imgCo03,
     slug: "esfoliante-corporal-rose",
     name: "Esfoliante Corporal Rosé",
     category: "corpo",
@@ -173,6 +186,7 @@ export const products: Product[] = [
   },
   {
     id: "co-04",
+    image: imgCo04,
     slug: "sabonete-liquido-cremoso",
     name: "Sabonete Líquido Cremoso",
     category: "corpo",
@@ -183,6 +197,7 @@ export const products: Product[] = [
   },
   {
     id: "co-05",
+    image: imgCo05,
     slug: "creme-maos-lavanda-mel",
     name: "Creme de Mãos Lavanda & Mel",
     category: "corpo",
