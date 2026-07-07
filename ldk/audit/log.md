@@ -115,3 +115,14 @@ Nao registrar segredos, tokens, PII ou prompt completo sensivel.
 - Decision: DONE
 - Known limitations: sem checagem responsiva mobile; sem sync entre abas; toast nao capturado em screenshot
 - Next: ldk-plan de F5 (checkout simulado)
+
+## 2026-07-07 - ldk-release - MVP Lovbeauty (F1-F5)
+- Command: ldk-release
+- User intent: checklist go/no-go do MVP fake/testavel sem implementar
+- State before: F1-F5 done no ledger; F6-F9 idea
+- Actions: revisao de ledger/proofs; smoke Playwright desktop+mobile em /, /produtos, /carrinho, /checkout; escrita de ldk/releases/2026-07-07.md
+- Files changed: ldk/releases/2026-07-07.md (novo), ldk/audit/log.md
+- Evidence: preview yes (desktop 1280x1800 + mobile 390x844); manual yes; tests not run; console yes (apenas warning dev-only data-tsd-source); diff no
+- Decision: GO
+- Known limitations: MVP simulado (sem pagamento, auth, backend); warning dev-only de hydration em data-tsd-source
+- Next: publicar quando o usuario decidir; F6-F9 permanecem fora do escopo
