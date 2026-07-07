@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { CartButton } from "@/components/CartButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,14 +64,17 @@ function Index() {
       <div className="mx-auto w-full max-w-6xl px-6 py-8 md:px-12 md:py-12">
         <header className="flex items-center justify-between">
           <span className="font-display text-2xl text-plum">Lovbeauty</span>
-          <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
-            <a href="#categorias" className="transition-colors hover:text-lavender">
-              Categorias
-            </a>
-            <a href="#sobre" className="transition-colors hover:text-lavender">
-              Sobre
-            </a>
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
+              <a href="#categorias" className="transition-colors hover:text-lavender">
+                Categorias
+              </a>
+              <a href="#sobre" className="transition-colors hover:text-lavender">
+                Sobre
+              </a>
+            </nav>
+            <CartButton />
+          </div>
         </header>
 
         <main className="space-y-24 md:space-y-32">

@@ -71,3 +71,14 @@ Nao registrar segredos, tokens, PII ou prompt completo sensivel.
 - Decision: approved
 - Known limitations: none
 - Next: ldk-build de F4
+
+## 2026-07-07 - ldk-build - F4 carrinho local
+- Command: ldk-build
+- User intent: construir carrinho local aprovado
+- State before: F4 approved, tasks T1-T6 ready
+- Actions: CartProvider com reducer + localStorage v1; CartButton com badge; CartDrawer (sheet); rota /carrinho full-page; CTA do detalhe habilitado com addItem + toast (sonner); provider e Toaster no RootComponent
+- Files changed: src/lib/cart-context.tsx (novo), src/components/CartButton.tsx (novo), src/components/CartDrawer.tsx (novo), src/routes/carrinho.tsx (novo), src/routes/__root.tsx, src/routes/index.tsx, src/routes/produtos.index.tsx, src/routes/produtos.$slug.tsx, src/routeTree.gen.ts, ldk/features/f4-carrinho/plan.md, ldk/features/f4-carrinho/proof.md (novo), ldk/ledger.md
+- Evidence: preview yes (Playwright, /tmp/browser/f4); manual yes (add x2, +, add 2o produto, reload, /carrinho, remover, empty); tests not run; console yes (sem erros de app); diff no
+- Decision: DONE
+- Known limitations: sem checagem responsiva mobile; sem sync entre abas; toast nao capturado em screenshot
+- Next: ldk-plan de F5 (checkout simulado)
