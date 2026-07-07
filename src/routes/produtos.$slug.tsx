@@ -1,4 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { toast } from "sonner";
+import { CartButton } from "@/components/CartButton";
+import { useCart } from "@/lib/cart-context";
 import { formatBRL, products, type Product } from "@/data/products";
 
 const categoryLabel: Record<Product["category"], string> = {
