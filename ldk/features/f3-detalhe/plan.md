@@ -24,11 +24,11 @@ Proof required: P2 (abrir rota de detalhe de pelo menos um produto e validar dad
 
 | ID | Descricao | AC | Arquivos esperados | Verificacao | State |
 |----|-----------|----|--------------------|-------------|-------|
-| T1 | Criar rota `/produtos/$slug` com loader/logica de busca por slug, `head()` dinamico e `notFoundComponent` | AC1, AC5, AC6 | `src/routes/produtos.$slug.tsx` | abrir `/produtos/serum-vitamina-c-radiancia` e `/produtos/inexistente` | ready |
-| T2 | Montar layout do detalhe (bloco visual + nome + preco + descricao) reusando tokens de F1/F2 | AC2, AC8 | `src/routes/produtos.$slug.tsx` | preview visual e classes semanticas | ready |
-| T3 | Adicionar secao "Detalhes" com mapa de copy por categoria (modo de uso, beneficios) e SKU | AC3 | `src/routes/produtos.$slug.tsx` (mapa inline) ou `src/data/products.ts` (extensao pequena) | preview mostra 4 linhas de detalhe | ready |
-| T4 | Adicionar CTA "Adicionar ao carrinho" `disabled` + link "voltar para colecao" | AC7, AC8 | `src/routes/produtos.$slug.tsx` | botao visivel e nao clicavel | ready |
-| T5 | Trocar wrapper do `ProductCard` por `<Link to="/produtos/$slug" params>` mantendo estilo | AC4, AC8 | `src/components/ProductCard.tsx` | clicar em um card no catalogo navega SPA | ready |
+| T1 | Criar rota `/produtos/$slug` com loader/logica de busca por slug, `head()` dinamico e `notFoundComponent` | AC1, AC5, AC6 | `src/routes/produtos.$slug.tsx` | abrir `/produtos/serum-vitamina-c-radiancia` e `/produtos/inexistente` | done |
+| T2 | Montar layout do detalhe (bloco visual + nome + preco + descricao) reusando tokens de F1/F2 | AC2, AC8 | `src/routes/produtos.$slug.tsx` | preview visual e classes semanticas | done |
+| T3 | Adicionar secao "Detalhes" com mapa de copy por categoria (modo de uso, beneficios) e SKU | AC3 | `src/routes/produtos.$slug.tsx` (mapa inline) ou `src/data/products.ts` (extensao pequena) | preview mostra 4 linhas de detalhe | done |
+| T4 | Adicionar CTA "Adicionar ao carrinho" `disabled` + link "voltar para colecao" | AC7, AC8 | `src/routes/produtos.$slug.tsx` | botao visivel e nao clicavel | done |
+| T5 | Trocar wrapper do `ProductCard` por `<Link to="/produtos/$slug" params>` mantendo estilo | AC4, AC8 | `src/components/ProductCard.tsx` | clicar em um card no catalogo navega SPA | done |
 
 ## Arquivos criados/alterados
 - `src/routes/produtos.$slug.tsx` (novo)
