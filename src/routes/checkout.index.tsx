@@ -76,7 +76,7 @@ function CheckoutPage() {
     clear();
     await navigate({
       to: "/checkout/confirmado",
-      state: ((prev) => ({ ...prev, order: snapshot })) as never,
+      state: ((prev: Record<string, unknown>) => ({ ...prev, order: snapshot })) as never,
     });
   });
 
