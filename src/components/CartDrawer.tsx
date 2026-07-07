@@ -147,17 +147,13 @@ export function CartDrawer() {
               </span>
             </div>
             <div className="mt-5 space-y-3">
-              <button
-                type="button"
-                disabled
-                aria-disabled="true"
-                className="w-full rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground opacity-60 shadow-[var(--shadow-soft)]"
+              <Link
+                to="/checkout"
+                onClick={closeCart}
+                className="block w-full rounded-full bg-lavender px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
               >
                 Finalizar compra
-              </button>
-              <p className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Checkout em F5
-              </p>
+              </Link>
               <button
                 type="button"
                 onClick={closeCart}

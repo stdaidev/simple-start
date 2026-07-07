@@ -196,17 +196,12 @@ function Carrinho() {
                     </dd>
                   </div>
                 </dl>
-                <button
-                  type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="mt-8 w-full rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground opacity-60 shadow-[var(--shadow-soft)]"
+                <Link
+                  to="/checkout"
+                  className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
                 >
                   Finalizar compra
-                </button>
-                <p className="mt-3 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Checkout em F5
-                </p>
+                </Link>
                 <Link
                   to="/produtos"
                   className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-lavender px-6 py-3 text-xs font-bold uppercase tracking-[0.25em] text-plum transition-colors hover:bg-lavender-soft/60"
