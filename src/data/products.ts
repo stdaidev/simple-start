@@ -1,3 +1,19 @@
+import imgSk01 from "@/assets/p-sk-01.jpg";
+import imgSk02 from "@/assets/p-sk-02.jpg";
+import imgSk03 from "@/assets/p-sk-03.jpg";
+import imgSk04 from "@/assets/p-sk-04.jpg";
+import imgSk05 from "@/assets/p-sk-05.jpg";
+import imgCa01 from "@/assets/p-ca-01.jpg";
+import imgCa02 from "@/assets/p-ca-02.jpg";
+import imgCa03 from "@/assets/p-ca-03.jpg";
+import imgCa04 from "@/assets/p-ca-04.jpg";
+import imgCa05 from "@/assets/p-ca-05.jpg";
+import imgCo01 from "@/assets/p-co-01.jpg";
+import imgCo02 from "@/assets/p-co-02.jpg";
+import imgCo03 from "@/assets/p-co-03.jpg";
+import imgCo04 from "@/assets/p-co-04.jpg";
+import imgCo05 from "@/assets/p-co-05.jpg";
+
 export type Category = "skincare" | "cabelo" | "corpo";
 
 export type Product = {
@@ -9,6 +25,7 @@ export type Product = {
   description: string;
   gradient: "blush" | "lavender" | "hero";
   surface: "blush" | "blush-soft" | "iris-soft" | "lavender-soft";
+  image: string;
 };
 
 export const CATEGORIES: { value: Category | "todos"; label: string }[] = [
