@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
+import { CartButton } from "@/components/CartButton";
 import { CATEGORIES, products, type Category } from "@/data/products";
 
 type Filter = Category | "todos";
