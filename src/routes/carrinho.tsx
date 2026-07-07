@@ -98,12 +98,13 @@ function Carrinho() {
                     <Link
                       to="/produtos/$slug"
                       params={{ slug: product.slug }}
-                      className={`relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl md:h-28 md:w-28 ${surfaceMap[product.surface]}`}
+                      className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl bg-blush-soft md:h-28 md:w-28"
                     >
-                      <div
-                        className="absolute inset-2 rounded-xl opacity-80"
-                        style={{ backgroundImage: gradientMap[product.gradient] }}
-                        aria-hidden
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
                       />
                     </Link>
                     <div className="flex min-w-0 flex-1 flex-col justify-between gap-3">
