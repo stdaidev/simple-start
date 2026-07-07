@@ -6,6 +6,17 @@ Nao registrar segredos, tokens, PII ou prompt completo sensivel.
 
 ---
 
+## 2026-07-07 - ldk-plan - F5 checkout simulado
+- Command: ldk-plan
+- User intent: planejar checkout fake para fechar o MVP
+- State before: F5 idea; F4 done
+- Actions: criados brief.md e plan.md; 5 tasks (T1-T5); risco baixo, prova P2; PII apenas em memoria, sem persistencia
+- Files changed: ldk/features/f5-checkout/brief.md, ldk/features/f5-checkout/plan.md, ldk/ledger.md
+- Evidence: preview na; manual na; tests na; console na; diff na
+- Decision: planned
+- Known limitations: aguarda aprovacao para approved
+- Next: aprovar plano; depois ldk-build
+
 ## 2026-07-07 - ldk-build - F2 catalogo
 - Command: ldk-build
 - User intent: construir catalogo de produtos aprovado
