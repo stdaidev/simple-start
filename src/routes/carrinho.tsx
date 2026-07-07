@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { CartButton } from "@/components/CartButton";
 import { useCart } from "@/lib/cart-context";
-import { formatBRL } from "@/data/products";
+import { formatBRL, type Product } from "@/data/products";
 
 
 const categoryLabel: Record<Product["category"], string> = {
