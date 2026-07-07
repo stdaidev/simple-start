@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { CartButton } from "@/components/CartButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
