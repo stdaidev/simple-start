@@ -6,6 +6,17 @@ Nao registrar segredos, tokens, PII ou prompt completo sensivel.
 
 ---
 
+## 2026-07-07 - ldk-plan - F5 checkout simulado (approved)
+- Command: ldk-plan
+- User intent: aprovar plano F5
+- State before: F5 planned
+- Actions: ledger F5 planned -> approved
+- Files changed: ldk/ledger.md
+- Evidence: preview na; manual na; tests na; console na; diff na
+- Decision: approved
+- Known limitations: none
+- Next: ldk-build
+
 ## 2026-07-07 - ldk-plan - F5 checkout simulado
 - Command: ldk-plan
 - User intent: planejar checkout fake para fechar o MVP
