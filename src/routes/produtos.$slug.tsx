@@ -82,6 +82,7 @@ export const Route = createFileRoute("/produtos/$slug")({
 
 function ProdutoDetalhe() {
   const { product } = Route.useLoaderData() as { product: Product };
+  const { addItem, openCart } = useCart();
   const copy = categoryCopy[product.category];
 
   return (
