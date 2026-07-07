@@ -8,7 +8,7 @@ Estados válidos: idea | planned | approved | building | proof-pending | done | 
 | F2 | Catálogo (15 produtos fictícios em 3 categorias) | baixo | done | P2 | ldk/features/f2-catalogo/proof.md |
 | F3 | Página de detalhe do produto | baixo | done | P2 | ldk/features/f3-detalhe/proof.md |
 | F4 | Carrinho local | baixo | done | P2 | ldk/features/f4-carrinho/proof.md |
-| F5 | Checkout simulado | baixo | idea | P2 | |
+| F5 | Checkout simulado | baixo | planned | P2 | |
 | F6 | Pagamento real | alto | idea | P4 | |
 | F7 | Frete real | alto | idea | P4 | |
 | F8 | Auth do cliente | alto | idea | P4 | |
