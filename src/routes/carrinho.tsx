@@ -4,18 +4,6 @@ import { CartButton } from "@/components/CartButton";
 import { useCart } from "@/lib/cart-context";
 import { formatBRL, type Product } from "@/data/products";
 
-const surfaceMap: Record<Product["surface"], string> = {
-  blush: "bg-blush",
-  "blush-soft": "bg-blush-soft",
-  "iris-soft": "bg-iris-soft",
-  "lavender-soft": "bg-lavender-soft",
-};
-
-const gradientMap: Record<Product["gradient"], string> = {
-  blush: "var(--gradient-blush)",
-  lavender: "var(--gradient-lavender)",
-  hero: "var(--gradient-hero)",
-};
 
 const categoryLabel: Record<Product["category"], string> = {
   skincare: "Skincare",
