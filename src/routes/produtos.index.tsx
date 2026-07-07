@@ -5,7 +5,7 @@ import { CATEGORIES, products, type Category } from "@/data/products";
 
 type Filter = Category | "todos";
 
-export const Route = createFileRoute("/produtos")({
+export const Route = createFileRoute("/produtos/")({
   head: () => ({
     meta: [
       { title: "Lovbeauty — Coleção completa de skincare, cabelo e corpo" },
