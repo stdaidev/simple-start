@@ -149,15 +149,20 @@ function ProdutoDetalhe() {
               <div className="space-y-3">
                 <button
                   type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="w-full rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground opacity-60 shadow-[var(--shadow-soft)] md:w-auto md:px-10"
+                  onClick={() => {
+                    addItem(product);
+                    toast.success("Adicionado à sacola", {
+                      description: product.name,
+                      action: {
+                        label: "Ver sacola",
+                        onClick: () => openCart(),
+                      },
+                    });
+                  }}
+                  className="w-full rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 md:w-auto md:px-10"
                 >
                   Adicionar ao carrinho
                 </button>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Carrinho em breve (F4)
-                </p>
               </div>
 
               <section
