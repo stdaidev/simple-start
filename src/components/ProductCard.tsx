@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { formatBRL, type Product } from "@/data/products";
 
 const surfaceMap: Record<Product["surface"], string> = {
