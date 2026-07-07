@@ -78,7 +78,7 @@ export const Route = createFileRoute("/produtos/$slug")({
 });
 
 function ProdutoDetalhe() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const copy = categoryCopy[product.category];
 
   return (
