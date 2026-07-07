@@ -92,17 +92,20 @@ function ProdutoDetalhe() {
           <Link to="/" className="font-display text-2xl text-plum">
             Lovbeauty
           </Link>
-          <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
-            <Link to="/" className="transition-colors hover:text-lavender">
-              Início
-            </Link>
-            <Link
-              to="/produtos"
-              className="transition-colors hover:text-lavender"
-            >
-              Coleção
-            </Link>
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
+              <Link to="/" className="transition-colors hover:text-lavender">
+                Início
+              </Link>
+              <Link
+                to="/produtos"
+                className="transition-colors hover:text-lavender"
+              >
+                Coleção
+              </Link>
+            </nav>
+            <CartButton />
+          </div>
         </header>
 
         <main className="pt-12 md:pt-16">
