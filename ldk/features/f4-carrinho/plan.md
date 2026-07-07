@@ -24,12 +24,12 @@ Proof required: P2 (adicionar, ajustar qtd, remover, persistir no reload, subtot
 
 | ID | Descricao | AC | Arquivos esperados | Verificacao | State |
 |----|-----------|----|--------------------|-------------|-------|
-| T1 | Criar `CartProvider` + `useCart()` com reducer, tipos e persistencia versionada em localStorage (leitura client-only) | AC1, AC2 | `src/lib/cart-context.tsx` | testar no console: `addItem`/`updateQty`/`removeItem` afetam `count`/`subtotal` e sobrevivem ao reload | ready |
-| T2 | Aplicar `CartProvider` e `<Toaster />` do sonner no `RootShell` (fora do `<Outlet />` mas dentro do body) | AC1, AC8 | `src/routes/__root.tsx` | provider disponivel em todas as rotas | ready |
-| T3 | Criar `CartButton` (icone + badge) e `CartDrawer` (sheet lateral com lista, +/- , remover, subtotal, CTAs) | AC4, AC5, AC6 | `src/components/CartButton.tsx`, `src/components/CartDrawer.tsx` | preview: abrir drawer, ajustar qtd, remover, ver subtotal | ready |
-| T4 | Inserir `CartButton` no header das rotas `/`, `/produtos` (index) e `/produtos/$slug` sem duplicar codigo | AC4, AC8 | `src/routes/index.tsx`, `src/routes/produtos.index.tsx`, `src/routes/produtos.$slug.tsx` | badge aparece nas tres rotas | ready |
-| T5 | Habilitar o botao "Adicionar ao carrinho" no detalhe: chamar `addItem` + toast; manter estilo e remover copy "em breve" | AC3, AC8 | `src/routes/produtos.$slug.tsx` | clicar 2x no botao -> `count` = 2, toast visivel | ready |
-| T6 | Criar rota `/carrinho` com listagem full-page, `head()` proprio e estado vazio com CTA para `/produtos` | AC7, AC8 | `src/routes/carrinho.tsx` | abrir `/carrinho` com e sem itens | ready |
+| T1 | Criar `CartProvider` + `useCart()` com reducer, tipos e persistencia versionada em localStorage (leitura client-only) | AC1, AC2 | `src/lib/cart-context.tsx` | testar no console: `addItem`/`updateQty`/`removeItem` afetam `count`/`subtotal` e sobrevivem ao reload | done |
+| T2 | Aplicar `CartProvider` e `<Toaster />` do sonner no `RootShell` (fora do `<Outlet />` mas dentro do body) | AC1, AC8 | `src/routes/__root.tsx` | provider disponivel em todas as rotas | done |
+| T3 | Criar `CartButton` (icone + badge) e `CartDrawer` (sheet lateral com lista, +/- , remover, subtotal, CTAs) | AC4, AC5, AC6 | `src/components/CartButton.tsx`, `src/components/CartDrawer.tsx` | preview: abrir drawer, ajustar qtd, remover, ver subtotal | done |
+| T4 | Inserir `CartButton` no header das rotas `/`, `/produtos` (index) e `/produtos/$slug` sem duplicar codigo | AC4, AC8 | `src/routes/index.tsx`, `src/routes/produtos.index.tsx`, `src/routes/produtos.$slug.tsx` | badge aparece nas tres rotas | done |
+| T5 | Habilitar o botao "Adicionar ao carrinho" no detalhe: chamar `addItem` + toast; manter estilo e remover copy "em breve" | AC3, AC8 | `src/routes/produtos.$slug.tsx` | clicar 2x no botao -> `count` = 2, toast visivel | done |
+| T6 | Criar rota `/carrinho` com listagem full-page, `head()` proprio e estado vazio com CTA para `/produtos` | AC7, AC8 | `src/routes/carrinho.tsx` | abrir `/carrinho` com e sem itens | done |
 
 ## Arquivos criados/alterados
 - `src/lib/cart-context.tsx` (novo)
