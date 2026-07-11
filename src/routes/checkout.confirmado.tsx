@@ -1,5 +1,4 @@
 import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
-import { CheckCircle2 } from "lucide-react";
 import { CartButton } from "@/components/CartButton";
 import { formatBRL } from "@/data/products";
 import type { OrderSnapshot } from "@/lib/checkout-schema";
@@ -29,18 +28,18 @@ function CheckoutConfirmado() {
   const order = state?.order;
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-lavender-soft selection:text-plum">
-      <div className="mx-auto w-full max-w-4xl px-6 py-8 md:px-12 md:py-12">
-        <header className="flex items-center justify-between">
-          <Link to="/" className="font-display text-2xl text-plum">
-            Lovbeauty
+    <div className="min-h-screen bg-background text-foreground selection:bg-clay-soft selection:text-ink">
+      <div className="mx-auto w-full max-w-4xl px-6 md:px-12">
+        <header className="rule-double flex items-center justify-between py-6">
+          <Link to="/" className="font-display text-2xl text-ink">
+            Lovbeauty<span className="text-clay">.</span>
           </Link>
-          <div className="flex items-center gap-6">
-            <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
-              <Link to="/" className="transition-colors hover:text-lavender">
+          <div className="flex items-center gap-8">
+            <nav className="hidden gap-8 text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk md:flex">
+              <Link to="/" className="transition-colors hover:text-ink">
                 Início
               </Link>
-              <Link to="/produtos" className="transition-colors hover:text-lavender">
+              <Link to="/produtos" className="transition-colors hover:text-ink">
                 Coleção
               </Link>
             </nav>
@@ -50,86 +49,104 @@ function CheckoutConfirmado() {
 
         <main className="pt-16 md:pt-24">
           {order ? (
-            <section className="rounded-[40px] border border-blush/60 bg-blush-soft/40 p-8 md:p-14">
-              <div className="flex flex-col items-center text-center">
-                <CheckCircle2 className="h-14 w-14 text-lavender" aria-hidden />
-                <span className="mt-6 inline-flex rounded-full bg-lavender-soft px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum">
-                  Simulação — nenhuma cobrança foi realizada
-                </span>
-                <h1 className="mt-6 font-display text-5xl leading-[0.95] text-plum md:text-6xl">
-                  Ritual confirmado
-                </h1>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-                  Este é um pedido de demonstração. Guarde o número abaixo para
-                  referência da simulação.
-                </p>
-                <p className="mt-8 font-display text-3xl tracking-widest text-lavender md:text-4xl">
-                  {order.orderNumber}
-                </p>
-              </div>
+            <>
+              <section className="rule-double grid grid-cols-12 gap-x-6 pt-8 pb-12">
+                <div className="col-span-12 mb-6 flex items-baseline justify-between">
+                  <span className="section-number text-sm">
+                    Pedido — {order.orderNumber}
+                  </span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
+                    Simulação · sem cobrança
+                  </span>
+                </div>
+                <div className="col-span-12 md:col-span-10">
+                  <h1 className="font-display text-6xl leading-[0.9] tracking-[-0.03em] text-ink md:text-7xl">
+                    Ritual <em className="text-clay">confirmado</em>
+                  </h1>
+                  <p className="mt-6 max-w-xl text-base leading-[1.6] text-ink-soft">
+                    Este é um pedido de demonstração. Guarde o número acima
+                    para referência da simulação — nenhum e-mail foi enviado.
+                  </p>
+                </div>
+              </section>
 
-              <div className="mt-10 rounded-3xl border border-blush/60 bg-background p-6 md:p-8">
-                <h2 className="font-display text-2xl text-plum">Itens</h2>
-                <ul className="mt-4 space-y-3 text-sm">
+              <section className="mt-10 border border-rule p-6 md:p-10">
+                <div className="flex items-baseline justify-between">
+                  <h2 className="font-display text-3xl text-ink">Itens</h2>
+                  <span className="section-number text-sm">
+                    {String(order.items.length).padStart(2, "0")}
+                  </span>
+                </div>
+                <ul className="mt-6 divide-y divide-rule border-t border-b border-rule">
                   {order.items.map((it) => (
                     <li
                       key={it.productId}
-                      className="flex items-start justify-between gap-3 border-b border-blush/40 pb-3 last:border-0"
+                      className="flex items-start justify-between gap-3 py-4"
                     >
                       <div className="min-w-0">
-                        <p className="truncate text-plum">{it.name}</p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="truncate text-ink">{it.name}</p>
+                        <p className="text-xs text-dusk">
                           {it.qty} × {formatBRL(it.unitPrice)}
                         </p>
                       </div>
-                      <p className="text-sm font-semibold text-lavender">
+                      <p className="price-display text-sm text-clay">
                         {formatBRL(it.lineTotal)}
                       </p>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 flex items-baseline justify-between border-t border-blush/60 pt-4">
-                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+                <div className="mt-6 flex items-baseline justify-between">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
                     Total
                   </span>
-                  <span className="font-display text-2xl text-plum">
+                  <span className="price-display text-3xl text-ink">
                     {formatBRL(order.total)}
                   </span>
                 </div>
-              </div>
+              </section>
 
-              <div className="mt-10 flex flex-col items-center gap-3 md:flex-row md:justify-center">
+              <div className="mt-10 flex flex-col items-start gap-3 md:flex-row">
                 <Link
                   to="/produtos"
-                  className="inline-flex rounded-full bg-lavender px-8 py-3 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-3 bg-ink px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-paper transition-colors hover:bg-clay"
                 >
-                  Continuar comprando
+                  Continuar comprando <span aria-hidden>→</span>
                 </Link>
                 <Link
                   to="/"
-                  className="inline-flex rounded-full border border-lavender px-8 py-3 text-xs font-bold uppercase tracking-[0.25em] text-plum transition-colors hover:bg-lavender-soft/60"
+                  className="inline-flex items-center px-2 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-ink underline underline-offset-[6px] decoration-1 transition-colors hover:text-clay"
                 >
                   Voltar para o início
                 </Link>
               </div>
-            </section>
+            </>
           ) : (
-            <section className="rounded-[40px] bg-blush-soft/60 p-10 text-center md:p-16">
-              <h1 className="font-display text-4xl text-plum md:text-5xl">
-                Nada por aqui
+            <section className="border border-rule p-12 text-center md:p-20">
+              <span className="section-number text-sm">Sem pedido</span>
+              <h1 className="mt-4 font-display text-5xl text-ink md:text-6xl">
+                Nada por <em className="text-clay">aqui</em>
               </h1>
-              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-dusk">
                 Não encontramos um pedido para exibir. Comece um novo ritual
                 pela coleção.
               </p>
               <Link
                 to="/produtos"
-                className="mt-8 inline-flex rounded-full bg-lavender px-8 py-3 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
+                className="mt-8 inline-flex items-center gap-3 bg-ink px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-paper transition-colors hover:bg-clay"
               >
-                Ver a coleção
+                Ver a coleção <span aria-hidden>→</span>
               </Link>
             </section>
           )}
+
+          <footer className="rule-double mt-24 flex flex-col items-start justify-between gap-6 pt-8 pb-12 md:flex-row md:items-end">
+            <Link to="/" className="font-display text-3xl text-ink">
+              Lovbeauty<span className="text-clay">.</span>
+            </Link>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-dusk">
+              © {new Date().getFullYear()} Lovbeauty · MVP demonstrativo
+            </p>
+          </footer>
         </main>
       </div>
     </div>

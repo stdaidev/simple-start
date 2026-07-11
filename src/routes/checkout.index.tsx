@@ -81,21 +81,21 @@ function CheckoutPage() {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-lavender-soft selection:text-plum">
-      <div className="mx-auto w-full max-w-6xl px-6 py-8 md:px-12 md:py-12">
-        <header className="flex items-center justify-between">
-          <Link to="/" className="font-display text-2xl text-plum">
-            Lovbeauty
+    <div className="min-h-screen bg-background text-foreground selection:bg-clay-soft selection:text-ink">
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-12">
+        <header className="rule-double flex items-center justify-between py-6">
+          <Link to="/" className="font-display text-2xl text-ink">
+            Lovbeauty<span className="text-clay">.</span>
           </Link>
-          <div className="flex items-center gap-6">
-            <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
-              <Link to="/" className="transition-colors hover:text-lavender">
+          <div className="flex items-center gap-8">
+            <nav className="hidden gap-8 text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk md:flex">
+              <Link to="/" className="transition-colors hover:text-ink">
                 Início
               </Link>
-              <Link to="/produtos" className="transition-colors hover:text-lavender">
+              <Link to="/produtos" className="transition-colors hover:text-ink">
                 Coleção
               </Link>
-              <Link to="/carrinho" className="transition-colors hover:text-lavender">
+              <Link to="/carrinho" className="transition-colors hover:text-ink">
                 Sacola
               </Link>
             </nav>
@@ -104,41 +104,48 @@ function CheckoutPage() {
         </header>
 
         <main className="pt-12 md:pt-16">
-          <div className="space-y-4">
-            <span className="inline-flex rounded-full bg-lavender-soft px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum">
-              Checkout
-            </span>
-            <h1 className="font-display text-5xl leading-[0.95] text-plum md:text-6xl">
-              Quase lá
-            </h1>
-            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Preencha seus dados para simular a finalização. Nenhuma cobrança
-              será realizada e nada é enviado para servidores externos.
-            </p>
-          </div>
+          <section className="rule-double grid grid-cols-12 gap-x-6 pt-8 pb-10">
+            <div className="col-span-12 mb-6 flex items-baseline justify-between">
+              <span className="section-number text-sm">Checkout — Simulação</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
+                Sem cobrança real
+              </span>
+            </div>
+            <div className="col-span-12 md:col-span-8">
+              <h1 className="font-display text-6xl leading-[0.9] tracking-[-0.03em] text-ink md:text-7xl">
+                Quase <em className="text-clay">lá</em>
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-[1.6] text-ink-soft">
+                Preencha seus dados para simular a finalização. Nenhuma cobrança
+                será realizada e nada é enviado para servidores externos.
+              </p>
+            </div>
+          </section>
 
           {count === 0 ? (
-            <div className="mt-12 rounded-[40px] bg-blush-soft/60 p-10 text-center md:p-16">
-              <p className="mx-auto max-w-md text-base leading-relaxed text-muted-foreground">
+            <div className="mt-12 border border-rule p-12 text-center md:p-20">
+              <span className="section-number text-sm">Vazia</span>
+              <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-dusk">
                 Sua sacola está vazia. Escolha itens antes de finalizar.
               </p>
               <Link
                 to="/produtos"
-                className="mt-8 inline-flex rounded-full bg-lavender px-8 py-3 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5"
+                className="mt-8 inline-flex items-center gap-3 bg-ink px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-paper transition-colors hover:bg-clay"
               >
-                Ver a coleção
+                Ver a coleção <span aria-hidden>→</span>
               </Link>
             </div>
           ) : (
             <form
               onSubmit={onSubmit}
-              className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[1.5fr_1fr]"
+              className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1.5fr_1fr]"
               noValidate
             >
-              <section className="space-y-8">
+              <section className="space-y-12">
                 <fieldset className="space-y-5">
-                  <legend className="font-display text-2xl text-plum">
-                    Contato
+                  <legend className="rule flex w-full items-baseline justify-between pt-2">
+                    <span className="font-display text-3xl text-ink">Contato</span>
+                    <span className="section-number text-sm">01</span>
                   </legend>
                   <Field
                     id="fullName"
@@ -167,8 +174,9 @@ function CheckoutPage() {
                 </fieldset>
 
                 <fieldset className="space-y-5">
-                  <legend className="font-display text-2xl text-plum">
-                    Entrega
+                  <legend className="rule flex w-full items-baseline justify-between pt-2">
+                    <span className="font-display text-3xl text-ink">Entrega</span>
+                    <span className="section-number text-sm">02</span>
                   </legend>
                   <div className="grid grid-cols-1 gap-5 md:grid-cols-[1fr_2fr]">
                     <Field
@@ -221,21 +229,24 @@ function CheckoutPage() {
                 </fieldset>
               </section>
 
-              <aside className="h-fit rounded-3xl border border-blush/60 p-6 md:sticky md:top-8 md:p-8">
-                <h2 className="font-display text-2xl text-plum">Resumo</h2>
-                <ul className="mt-6 space-y-3 text-sm">
+              <aside className="h-fit border border-rule p-6 md:sticky md:top-8 md:p-8">
+                <div className="flex items-baseline justify-between">
+                  <h2 className="font-display text-3xl text-ink">Resumo</h2>
+                  <span className="section-number text-sm">03</span>
+                </div>
+                <ul className="mt-6 divide-y divide-rule border-t border-rule">
                   {lines.map(({ product, qty, lineTotal }) => (
                     <li
                       key={product.id}
-                      className="flex items-start justify-between gap-3 border-b border-blush/40 pb-3 last:border-0"
+                      className="flex items-start justify-between gap-3 py-3"
                     >
                       <div className="min-w-0">
-                        <p className="truncate text-plum">{product.name}</p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="truncate text-ink">{product.name}</p>
+                        <p className="text-xs text-dusk">
                           {qty} × {formatBRL(product.price)}
                         </p>
                       </div>
-                      <p className="text-sm font-semibold text-lavender">
+                      <p className="price-display text-sm text-clay">
                         {formatBRL(lineTotal)}
                       </p>
                     </li>
@@ -243,18 +254,18 @@ function CheckoutPage() {
                 </ul>
                 <dl className="mt-6 space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <dt className="text-muted-foreground">Subtotal</dt>
-                    <dd className="text-plum">{formatBRL(subtotal)}</dd>
+                    <dt className="text-dusk">Subtotal</dt>
+                    <dd className="text-ink">{formatBRL(subtotal)}</dd>
                   </div>
                   <div className="flex justify-between">
-                    <dt className="text-muted-foreground">Frete</dt>
-                    <dd className="text-plum">Grátis (simulação)</dd>
+                    <dt className="text-dusk">Frete</dt>
+                    <dd className="text-ink">Grátis (simulação)</dd>
                   </div>
-                  <div className="flex justify-between border-t border-blush/60 pt-3">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+                  <div className="rule flex items-baseline justify-between pt-3">
+                    <dt className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
                       Total
                     </dt>
-                    <dd className="font-display text-2xl text-plum">
+                    <dd className="price-display text-3xl text-ink">
                       {formatBRL(subtotal)}
                     </dd>
                   </div>
@@ -262,16 +273,17 @@ function CheckoutPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-8 w-full rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+                  className="mt-8 inline-flex w-full items-center justify-center gap-3 bg-ink px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-paper transition-colors hover:bg-clay disabled:opacity-60"
                 >
                   {isSubmitting ? "Processando..." : "Confirmar pedido"}
+                  {!isSubmitting && <span aria-hidden>→</span>}
                 </button>
-                <p className="mt-3 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                <p className="mt-3 text-center text-[10px] font-semibold uppercase tracking-[0.25em] text-dusk">
                   Simulação — nenhuma cobrança
                 </p>
                 <Link
                   to="/carrinho"
-                  className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-lavender px-6 py-3 text-xs font-bold uppercase tracking-[0.25em] text-plum transition-colors hover:bg-lavender-soft/60"
+                  className="mt-4 inline-flex w-full items-center justify-center py-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk underline underline-offset-[6px] decoration-1 transition-colors hover:text-ink"
                 >
                   Voltar para a sacola
                 </Link>
@@ -295,7 +307,7 @@ const Field = ({ id, label, error, className, ...rest }: FieldProps) => {
     <div className="space-y-1.5">
       <label
         htmlFor={id}
-        className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
+        className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk"
       >
         {label}
       </label>
@@ -303,8 +315,8 @@ const Field = ({ id, label, error, className, ...rest }: FieldProps) => {
         id={id}
         aria-invalid={error ? "true" : "false"}
         aria-describedby={error ? `${id}-error` : undefined}
-        className={`w-full rounded-2xl border border-blush bg-background px-4 py-3 text-sm text-plum outline-none transition-colors focus:border-lavender focus:ring-2 focus:ring-lavender-soft ${
-          error ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""
+        className={`w-full border-0 border-b border-rule bg-transparent px-0 py-3 text-base text-ink outline-none transition-colors focus:border-ink ${
+          error ? "border-destructive focus:border-destructive" : ""
         } ${className ?? ""}`}
         {...rest}
       />
