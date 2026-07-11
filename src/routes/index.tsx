@@ -14,10 +14,7 @@ export const Route = createFileRoute("/")({
         content:
           "Lovbeauty: curadoria brasileira de skincare, cabelo e corpo para mulheres de 20 a 45 que querem cuidar de si sem complicar.",
       },
-      {
-        property: "og:title",
-        content: "Lovbeauty — Rituais de beleza autoral brasileira",
-      },
+      { property: "og:title", content: "Lovbeauty — Rituais de beleza autoral brasileira" },
       {
         property: "og:description",
         content:
@@ -33,44 +30,46 @@ export const Route = createFileRoute("/")({
 
 const categories = [
   {
+    n: "01",
     name: "Skincare",
     tagline: "Rituais de pele que respeitam o seu tempo",
     description:
       "Séruns, hidratantes e protetores para uma rotina simples e eficaz.",
     image: catSkincare,
-    radius: "rounded-tr-[100px] rounded-bl-[40px]",
   },
   {
+    n: "02",
     name: "Cabelo",
     tagline: "Fios com brilho, movimento e cuidado real",
     description:
       "Do shampoo ao finalizador, fórmulas pensadas para cada textura.",
     image: catCabelo,
-    radius: "rounded-tl-[100px] rounded-br-[40px]",
-    offset: true,
   },
   {
+    n: "03",
     name: "Corpo",
     tagline: "Cuidado sensorial da cabeça aos pés",
     description:
       "Óleos, hidratantes e esfoliantes para transformar o banho em ritual.",
     image: catCorpo,
-    radius: "rounded-tr-[40px] rounded-bl-[100px]",
   },
 ];
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-lavender-soft selection:text-plum">
-      <div className="mx-auto w-full max-w-6xl px-6 py-8 md:px-12 md:py-12">
-        <header className="flex items-center justify-between">
-          <span className="font-display text-2xl text-plum">Lovbeauty</span>
-          <div className="flex items-center gap-6">
-            <nav className="hidden gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:flex">
-              <a href="#categorias" className="transition-colors hover:text-lavender">
+    <div className="min-h-screen bg-background text-foreground selection:bg-clay-soft selection:text-ink">
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-12">
+        {/* Header — ruled */}
+        <header className="rule-double flex items-center justify-between py-6">
+          <span className="font-display text-2xl tracking-tight text-ink">
+            Lovbeauty<span className="text-clay">.</span>
+          </span>
+          <div className="flex items-center gap-8">
+            <nav className="hidden gap-8 text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk md:flex">
+              <a href="#categorias" className="transition-colors hover:text-ink">
                 Categorias
               </a>
-              <a href="#sobre" className="transition-colors hover:text-lavender">
+              <a href="#sobre" className="transition-colors hover:text-ink">
                 Sobre
               </a>
             </nav>
@@ -78,17 +77,47 @@ function Index() {
           </div>
         </header>
 
-        <main className="space-y-24 md:space-y-32">
-          {/* HERO — Asymmetric 60/40 */}
-          <section className="grid grid-cols-1 items-center gap-12 pt-16 md:pt-24 lg:grid-cols-[1.5fr_1fr]">
-            {/* Coluna visual 60% */}
-            <div className="relative">
-              <div
-                className="absolute -top-6 -left-6 h-32 w-32 rounded-full opacity-60 blur-3xl"
-                style={{ background: "var(--lavender-soft)" }}
-                aria-hidden
-              />
-              <div className="relative z-10 aspect-[16/9] w-full overflow-hidden rounded-[40px] shadow-[var(--shadow-elegant)]">
+        <main>
+          {/* HERO — editorial ruled */}
+          <section className="grid grid-cols-12 gap-x-6 pt-12 pb-24 md:pt-20 md:pb-32">
+            <div className="col-span-12 mb-6 flex items-baseline justify-between md:col-span-12">
+              <span className="section-number text-sm">01 — Ritual</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
+                Estação · Verão 26
+              </span>
+            </div>
+
+            <div className="col-span-12 md:col-span-7">
+              <h1 className="font-display text-[16vw] leading-[0.85] tracking-[-0.04em] text-ink md:text-[9.5rem] lg:text-[11rem]">
+                Lov
+                <span className="italic text-clay">beauty</span>
+              </h1>
+            </div>
+
+            <div className="col-span-12 mt-8 flex flex-col gap-8 md:col-span-5 md:mt-16">
+              <p className="max-w-md text-lg leading-[1.55] text-ink-soft">
+                O ritual que sua pele merece. Curadoria brasileira de skincare,
+                cabelo e corpo para quem quer cuidar de si sem complicar.
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  to="/produtos"
+                  className="inline-flex items-center gap-3 bg-ink px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-paper transition-colors hover:bg-clay"
+                >
+                  Descobrir a coleção
+                  <span aria-hidden>→</span>
+                </Link>
+                <a
+                  href="#sobre"
+                  className="inline-flex items-center px-2 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-ink underline underline-offset-[6px] decoration-1 transition-colors hover:text-clay"
+                >
+                  Conhecer a marca
+                </a>
+              </div>
+            </div>
+
+            <div className="col-span-12 mt-12 md:mt-16">
+              <figure className="relative aspect-[21/9] w-full overflow-hidden">
                 <img
                   src={heroBanner}
                   alt="Composição de produtos Lovbeauty sobre linho amarrotado com pétalas de rosa e lavanda seca"
@@ -96,112 +125,97 @@ function Index() {
                   height={1080}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 flex items-start p-8 md:p-10">
-                  <span className="inline-flex w-fit rounded-full bg-background/80 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum backdrop-blur">
-                    Beleza autoral · 20 a 45
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Coluna copy 40% — sobrepõe */}
-            <div className="relative z-20 flex flex-col gap-8 lg:-ml-24">
-              <h1 className="font-display text-6xl leading-[0.9] text-plum md:text-7xl lg:text-8xl">
-                Lov
-                <br />
-                <span className="text-lavender">beauty</span>
-              </h1>
-              <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                O ritual que sua pele merece. Curadoria brasileira de skincare,
-                cabelo e corpo para quem quer cuidar de si sem complicar.
-              </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  to="/produtos"
-                  className="inline-flex items-center rounded-full bg-lavender-soft px-8 py-4 text-sm font-bold tracking-wide text-plum shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:bg-lavender hover:text-primary-foreground"
-                >
-                  Descobrir a coleção
-                </Link>
-                <a
-                  href="#sobre"
-                  className="inline-flex items-center rounded-full border border-border px-8 py-4 text-sm font-semibold tracking-wide text-plum transition-colors hover:border-lavender hover:text-lavender"
-                >
-                  Conhecer a marca
-                </a>
-              </div>
+              </figure>
+              <figcaption className="rule mt-3 flex items-baseline justify-between pt-2 text-[11px] uppercase tracking-[0.25em] text-dusk">
+                <span>Fig. 01 — Still life, linho e pétala seca</span>
+                <span className="section-number">↳ 20–45</span>
+              </figcaption>
             </div>
           </section>
 
-          {/* CATEGORIAS */}
-          <section id="categorias" className="space-y-16">
-            <div className="flex flex-col gap-4 border-b border-blush pb-6 md:flex-row md:items-end md:justify-between">
-              <h2 className="font-display text-4xl text-plum md:text-5xl">
-                Categorias
-              </h2>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-lavender">
-                Um ritual para cada parte de você
+          {/* CATEGORIAS — editorial rows */}
+          <section id="categorias" className="rule-double pt-10">
+            <div className="mb-16 flex items-end justify-between">
+              <div>
+                <span className="section-number text-sm">02 — Categorias</span>
+                <h2 className="mt-2 font-display text-5xl leading-[0.95] text-ink md:text-6xl">
+                  Um ritual para cada <em className="text-clay">parte de você</em>
+                </h2>
+              </div>
+              <span className="hidden text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk md:block">
+                Três coleções
               </span>
             </div>
 
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
               {categories.map((cat) => (
-                <article
-                  key={cat.name}
-                  className={`group flex flex-col gap-6 ${
-                    cat.offset ? "md:translate-y-12" : ""
-                  }`}
-                >
-                  <div
-                    className={`relative aspect-[3/4] overflow-hidden bg-blush-soft ${cat.radius}`}
-                  >
+                <article key={cat.name} className="group flex flex-col">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-blush-soft">
                     <img
                       src={cat.image}
                       alt={`Composição ${cat.name.toLowerCase()} Lovbeauty`}
                       loading="lazy"
                       width={1024}
                       height={1024}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     />
-                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/30 via-transparent to-transparent p-8">
-                      <h3 className="font-display text-3xl text-primary-foreground drop-shadow-md">
-                        {cat.name}
-                      </h3>
-                    </div>
                   </div>
-                  <div className="space-y-3 px-1">
-                    <p className="text-sm font-semibold text-lavender">
-                      {cat.tagline}
-                    </p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {cat.description}
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 pt-2 text-xs font-bold uppercase tracking-[0.2em] text-plum transition-colors hover:text-lavender"
-                    >
-                      Ver produtos
-                      <span aria-hidden>→</span>
-                    </a>
+                  <div className="rule mt-5 flex items-baseline justify-between pt-3">
+                    <h3 className="font-display text-3xl text-ink">
+                      {cat.name}
+                    </h3>
+                    <span className="section-number text-sm">{cat.n}</span>
                   </div>
+                  <p className="mt-3 text-sm font-medium text-clay">
+                    {cat.tagline}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-dusk">
+                    {cat.description}
+                  </p>
+                  <Link
+                    to="/produtos"
+                    className="mt-6 inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-[0.25em] text-ink underline underline-offset-[6px] decoration-1 transition-colors hover:text-clay"
+                  >
+                    Ver produtos <span aria-hidden>→</span>
+                  </Link>
                 </article>
               ))}
             </div>
           </section>
 
-          {/* RODAPÉ */}
-          <footer id="sobre" className="pt-16 pb-8">
-            <div className="flex flex-col items-start justify-between gap-10 border-t border-blush pt-12 md:flex-row md:items-end">
-              <div className="space-y-4">
-                <div className="font-display text-4xl text-plum">Lovbeauty</div>
-                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-                  Beleza autêntica, inspirada pela natureza brasileira e formulada
-                  para resultados reais.
-                </p>
-              </div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
-                © {new Date().getFullYear()} Lovbeauty. Feito com amor.
+          {/* MANIFESTO */}
+          <section id="sobre" className="rule-double mt-24 grid grid-cols-12 gap-x-6 pt-10 md:mt-32">
+            <div className="col-span-12 mb-8">
+              <span className="section-number text-sm">03 — Manifesto</span>
+            </div>
+            <div className="col-span-12 md:col-span-7 md:col-start-2">
+              <p className="font-display text-3xl leading-[1.15] text-ink md:text-4xl">
+                Beleza que respeita <em className="text-clay">o tempo</em> — sem
+                pressa, sem promessa vazia, sem ruído. Fórmulas honestas,
+                embalagem simples, ritual seu.
+              </p>
+              <p className="mt-8 max-w-xl text-base leading-[1.6] text-ink-soft">
+                Lovbeauty é curadoria autoral brasileira. Cada produto é
+                escolhido para caber em uma rotina real de quem tem pouco tempo
+                e muito desejo de se cuidar. Nada mais, nada menos.
               </p>
             </div>
+          </section>
+
+          {/* FOOTER */}
+          <footer className="rule-double mt-24 flex flex-col items-start justify-between gap-8 pt-8 pb-12 md:mt-32 md:flex-row md:items-end">
+            <div>
+              <div className="font-display text-4xl text-ink">
+                Lovbeauty<span className="text-clay">.</span>
+              </div>
+              <p className="mt-3 max-w-sm text-sm leading-relaxed text-dusk">
+                Beleza autêntica, inspirada pela natureza brasileira e formulada
+                para resultados reais.
+              </p>
+            </div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-dusk">
+              © {new Date().getFullYear()} Lovbeauty · MVP demonstrativo
+            </p>
           </footer>
         </main>
       </div>
