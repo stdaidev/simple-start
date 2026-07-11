@@ -67,22 +67,25 @@ function Produtos() {
           </div>
         </header>
 
-        <main className="space-y-16 pt-16 md:pt-20">
-          <section className="grid grid-cols-1 items-end gap-8 md:grid-cols-[1.5fr_1fr]">
-            <div className="space-y-6">
-              <span className="inline-flex rounded-full bg-lavender-soft px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum">
-                Coleção · 15 produtos
+        <main className="pt-12 md:pt-16">
+          <section className="rule-double grid grid-cols-12 gap-x-6 pt-8 pb-16">
+            <div className="col-span-12 mb-6 flex items-baseline justify-between">
+              <span className="section-number text-sm">Coleção — 15 produtos</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
+                Estação · Verão 26
               </span>
-              <h1 className="font-display text-5xl leading-[0.95] text-plum md:text-6xl lg:text-7xl">
-                O ritual <span className="text-lavender">completo</span>
+            </div>
+            <div className="col-span-12 md:col-span-7">
+              <h1 className="font-display text-6xl leading-[0.9] tracking-[-0.03em] text-ink md:text-7xl lg:text-8xl">
+                O ritual <em className="text-clay">completo</em>
               </h1>
-              <p className="max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-8 max-w-lg text-lg leading-[1.55] text-ink-soft">
                 Curadoria de skincare, cabelo e corpo pensada para o dia a dia
                 de mulheres que querem cuidar de si sem abrir mão do prazer
                 sensorial.
               </p>
             </div>
-            <div className="hidden aspect-square overflow-hidden rounded-[40px] bg-blush-soft shadow-[var(--shadow-elegant)] md:block">
+            <div className="col-span-12 mt-8 aspect-[4/5] overflow-hidden bg-blush-soft md:col-span-4 md:col-start-9 md:mt-0 md:aspect-auto">
               <img
                 src={heroBanner}
                 alt="Coleção Lovbeauty"
@@ -93,11 +96,11 @@ function Produtos() {
             </div>
           </section>
 
-          <section className="space-y-10">
+          <section className="space-y-10 pt-16">
             <div
               role="tablist"
               aria-label="Filtrar por categoria"
-              className="flex flex-wrap gap-3 border-b border-blush pb-6"
+              className="rule flex flex-wrap items-center gap-2 pt-4"
             >
               {CATEGORIES.map((cat) => {
                 const active = filter === cat.value;
@@ -107,23 +110,23 @@ function Produtos() {
                     role="tab"
                     aria-selected={active}
                     onClick={() => setFilter(cat.value)}
-                    className={`rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] transition-all ${
+                    className={`px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em] transition-colors ${
                       active
-                        ? "bg-lavender text-primary-foreground shadow-[var(--shadow-soft)]"
-                        : "bg-lavender-soft/60 text-plum hover:bg-lavender-soft"
+                        ? "bg-ink text-paper"
+                        : "text-dusk hover:text-ink"
                     }`}
                   >
                     {cat.label}
                   </button>
                 );
               })}
-              <span className="ml-auto self-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="ml-auto self-center text-[11px] font-semibold uppercase tracking-[0.25em] text-dusk">
                 {visible.length}{" "}
                 {visible.length === 1 ? "produto" : "produtos"}
               </span>
             </div>
 
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
               {visible.map((product, i) => (
                 <ProductCard
                   key={product.id}

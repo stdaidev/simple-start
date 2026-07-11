@@ -5,22 +5,21 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
+ * Lovbeauty v2 — Editorial, tactile.
+ * Palette (OKLCH, 60/30/10 + support):
+ *   60 dominant  --paper : warm bone off-white
+ *   30 neutral   --ink   : deep tinted brown-ink (not black)
+ *   10 accent    --clay  : dry terracotta rose (single saturated accent)
+ *   support      --dusk  : muted plum for secondary text
  *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Legacy token names (blush/lavender/plum/cream) are kept as aliases
+ * so existing components keep working, remapped to the new palette.
  */
 
 @theme inline {
-  --font-sans: "Cabin", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Abril Fatface", ui-serif, Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -28,6 +27,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -43,6 +43,17 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  /* New semantic tokens */
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+  --color-dusk: var(--dusk);
+  --color-rule: var(--rule);
+
+  /* Legacy aliases — remapped */
   --color-blush: var(--blush);
   --color-blush-soft: var(--blush-soft);
   --color-cream: var(--cream);
@@ -51,17 +62,20 @@
   --color-lavender-soft: var(--lavender-soft);
   --color-iris-soft: var(--iris-soft);
   --color-gold: var(--gold);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -70,127 +84,135 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
   --gradient-hero: var(--gradient-hero-value);
-  --gradient-blush: var(--gradient-blush-value);
-  --gradient-lavender: var(--gradient-lavender-value);
   --shadow-soft: var(--shadow-soft-value);
   --shadow-elegant: var(--shadow-elegant-value);
 }
 
-
 :root {
-  --radius: 1.25rem;
+  --radius: 0.25rem;
 
-  /* Lovbeauty — Blush & Lavender editorial */
-  /* Base cream-blush #FFF9FA */
-  --background: oklch(0.985 0.008 350);
-  /* Deep plum-ink #4A3B3E */
-  --foreground: oklch(0.34 0.02 0);
+  /* Core palette — Lovbeauty v2 */
+  --paper: oklch(0.965 0.008 60);   /* warm bone off-white */
+  --ink: oklch(0.24 0.015 25);      /* deep tinted brown-ink */
+  --ink-soft: oklch(0.34 0.02 25);
+  --clay: oklch(0.62 0.11 25);      /* dry terracotta rose */
+  --clay-soft: oklch(0.9 0.04 30);
+  --dusk: oklch(0.5 0.02 15);       /* muted secondary text */
+  --rule: oklch(0.24 0.015 25 / 0.14);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.34 0.02 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.34 0.02 0);
+  --background: var(--paper);
+  --foreground: var(--ink);
 
-  /* Primary: lavender #A997D0 — brand accent for CTA/links */
-  --primary: oklch(0.68 0.09 300);
-  --primary-foreground: oklch(0.28 0.06 300);
-  --primary-soft: oklch(0.86 0.06 300);
+  --card: oklch(0.985 0.005 60);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.985 0.005 60);
+  --popover-foreground: var(--ink);
 
-  /* Secondary: soft blush wash */
-  --secondary: oklch(0.94 0.025 355);
-  --secondary-foreground: oklch(0.34 0.02 0);
+  /* Primary = clay */
+  --primary: var(--clay);
+  --primary-foreground: var(--paper);
+  --primary-soft: var(--clay-soft);
 
-  --muted: oklch(0.94 0.025 355);
-  --muted-foreground: oklch(0.5 0.015 0);
+  --secondary: oklch(0.93 0.012 60);
+  --secondary-foreground: var(--ink);
 
-  /* Accent: pale lavender #D8D1F5 */
-  --accent: oklch(0.9 0.04 295);
-  --accent-foreground: oklch(0.28 0.06 300);
+  --muted: oklch(0.93 0.012 60);
+  --muted-foreground: var(--dusk);
 
-  /* Signature named tokens (Blush & Lavender) */
-  --blush: oklch(0.9 0.045 355);    /* #FAD2E1 */
-  --cream: oklch(0.985 0.008 350);  /* #FFF9FA */
-  --plum: oklch(0.34 0.02 0);       /* #4A3B3E */
-  --lavender: oklch(0.68 0.09 300); /* #A997D0 */
-  --lavender-soft: oklch(0.9 0.04 295); /* #D8D1F5 */
-  --blush-soft: oklch(0.94 0.028 15); /* #FDE2E4 */
-  --iris-soft: oklch(0.93 0.03 285); /* #E2E2FF */
-  --gold: oklch(0.78 0.09 80);
+  --accent: var(--clay-soft);
+  --accent-foreground: var(--ink);
 
-  --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(0.985 0.008 350);
+  /* Legacy aliases mapped onto new palette so old classes keep rendering */
+  --blush: var(--clay-soft);
+  --blush-soft: oklch(0.94 0.02 40);
+  --cream: var(--paper);
+  --plum: var(--ink);
+  --lavender: var(--clay);
+  --lavender-soft: var(--clay-soft);
+  --iris-soft: oklch(0.93 0.015 40);
+  --gold: oklch(0.72 0.09 70);
 
-  --border: oklch(0.88 0.035 355);
-  --input: oklch(0.88 0.035 355);
-  --ring: oklch(0.68 0.09 300);
+  --destructive: oklch(0.5 0.18 27);
+  --destructive-foreground: var(--paper);
 
-  --chart-1: oklch(0.68 0.09 300);
-  --chart-2: oklch(0.9 0.045 355);
-  --chart-3: oklch(0.86 0.06 300);
-  --chart-4: oklch(0.62 0.14 15);
-  --chart-5: oklch(0.4 0.06 305);
+  --border: var(--rule);
+  --input: oklch(0.24 0.015 25 / 0.18);
+  --ring: var(--clay);
 
-  --sidebar: oklch(0.985 0.008 350);
-  --sidebar-foreground: oklch(0.34 0.02 0);
-  --sidebar-primary: oklch(0.68 0.09 300);
-  --sidebar-primary-foreground: oklch(0.985 0.008 350);
-  --sidebar-accent: oklch(0.9 0.04 295);
-  --sidebar-accent-foreground: oklch(0.28 0.06 300);
-  --sidebar-border: oklch(0.88 0.035 355);
-  --sidebar-ring: oklch(0.68 0.09 300);
+  --chart-1: var(--clay);
+  --chart-2: var(--dusk);
+  --chart-3: var(--ink-soft);
+  --chart-4: oklch(0.72 0.09 70);
+  --chart-5: oklch(0.4 0.03 20);
 
-  --gradient-hero-value: linear-gradient(135deg, oklch(0.985 0.008 350) 0%, oklch(0.94 0.028 15) 55%, oklch(0.9 0.04 295) 100%);
-  --gradient-blush-value: linear-gradient(180deg, oklch(0.94 0.028 15) 0%, oklch(0.9 0.045 355) 100%);
-  --gradient-lavender-value: linear-gradient(160deg, oklch(0.93 0.03 285) 0%, oklch(0.86 0.06 300) 100%);
-  --shadow-soft-value: 0 12px 32px -14px oklch(0.34 0.02 0 / 0.14);
-  --shadow-elegant-value: 0 28px 60px -22px oklch(0.4 0.06 305 / 0.28);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--clay);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--clay-soft);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--clay);
+
+  --gradient-hero-value: linear-gradient(135deg, var(--paper) 0%, oklch(0.94 0.02 40) 100%);
+  --shadow-soft-value: 0 1px 0 0 var(--rule);
+  --shadow-elegant-value: 0 24px 60px -30px oklch(0.24 0.015 25 / 0.35);
 }
 
-
 .dark {
-  --background: oklch(0.18 0.03 350);
-  --foreground: oklch(0.97 0.02 70);
-  --card: oklch(0.22 0.04 350);
-  --card-foreground: oklch(0.97 0.02 70);
-  --popover: oklch(0.22 0.04 350);
-  --popover-foreground: oklch(0.97 0.02 70);
-  --primary: oklch(0.72 0.11 10);
-  --primary-foreground: oklch(0.18 0.03 350);
-  --primary-soft: oklch(0.82 0.08 15);
-  --secondary: oklch(0.28 0.05 350);
-  --secondary-foreground: oklch(0.97 0.02 70);
-  --muted: oklch(0.28 0.05 350);
-  --muted-foreground: oklch(0.78 0.03 30);
-  --accent: oklch(0.34 0.07 350);
-  --accent-foreground: oklch(0.97 0.02 70);
-  --blush: oklch(0.6 0.09 15);
-  --cream: oklch(0.94 0.02 70);
-  --plum: oklch(0.72 0.11 10);
-  --gold: oklch(0.78 0.09 80);
-  --destructive: oklch(0.6 0.2 27);
-  --destructive-foreground: oklch(0.97 0.02 70);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.72 0.11 10);
-  --chart-1: oklch(0.72 0.11 10);
-  --chart-2: oklch(0.82 0.08 15);
-  --chart-3: oklch(0.78 0.09 80);
-  --chart-4: oklch(0.62 0.14 30);
-  --chart-5: oklch(0.5 0.12 350);
-  --sidebar: oklch(0.22 0.04 350);
-  --sidebar-foreground: oklch(0.97 0.02 70);
-  --sidebar-primary: oklch(0.72 0.11 10);
-  --sidebar-primary-foreground: oklch(0.18 0.03 350);
-  --sidebar-accent: oklch(0.34 0.07 350);
-  --sidebar-accent-foreground: oklch(0.97 0.02 70);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.72 0.11 10);
+  --paper: oklch(0.16 0.01 25);
+  --ink: oklch(0.94 0.01 60);
+  --ink-soft: oklch(0.82 0.01 60);
+  --clay: oklch(0.7 0.12 25);
+  --clay-soft: oklch(0.3 0.05 25);
+  --dusk: oklch(0.7 0.02 30);
+  --rule: oklch(0.94 0.01 60 / 0.14);
 
-  --gradient-hero-value: linear-gradient(135deg, oklch(0.22 0.04 350) 0%, oklch(0.28 0.06 5) 60%, oklch(0.34 0.09 15) 100%);
-  --gradient-blush-value: linear-gradient(180deg, oklch(0.18 0.03 350) 0%, oklch(0.28 0.06 5) 100%);
-  --shadow-soft-value: 0 10px 30px -12px oklch(0 0 0 / 0.5);
-  --shadow-elegant-value: 0 24px 60px -20px oklch(0 0 0 / 0.6);
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(0.2 0.012 25);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.2 0.012 25);
+  --popover-foreground: var(--ink);
+  --primary: var(--clay);
+  --primary-foreground: oklch(0.16 0.01 25);
+  --primary-soft: var(--clay-soft);
+  --secondary: oklch(0.22 0.015 25);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.22 0.015 25);
+  --muted-foreground: var(--dusk);
+  --accent: var(--clay-soft);
+  --accent-foreground: var(--ink);
+
+  --blush: var(--clay-soft);
+  --blush-soft: oklch(0.24 0.02 30);
+  --cream: var(--paper);
+  --plum: var(--ink);
+  --lavender: var(--clay);
+  --lavender-soft: var(--clay-soft);
+  --iris-soft: oklch(0.26 0.02 30);
+  --gold: oklch(0.72 0.09 70);
+
+  --destructive: oklch(0.6 0.2 27);
+  --destructive-foreground: var(--ink);
+  --border: var(--rule);
+  --input: oklch(0.94 0.01 60 / 0.18);
+  --ring: var(--clay);
+
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--clay);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--clay-soft);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--clay);
+
+  --gradient-hero-value: linear-gradient(135deg, var(--paper) 0%, oklch(0.22 0.015 25) 100%);
+  --shadow-soft-value: 0 1px 0 0 var(--rule);
+  --shadow-elegant-value: 0 24px 60px -20px oklch(0 0 0 / 0.55);
 }
 
 @layer base {
@@ -202,11 +224,43 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 }
 
+@utility rule {
+  border-top: 1px solid var(--rule);
+}
+
+@utility rule-double {
+  border-top: 1px solid var(--rule);
+  box-shadow: 0 3px 0 -2px var(--rule);
+}
+
+@utility section-number {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--clay);
+}
+
+@utility price-display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}

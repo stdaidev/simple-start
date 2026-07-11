@@ -105,7 +105,7 @@ function ProdutoDetalhe() {
           </Link>
 
           <article className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
-            <div className="relative aspect-square overflow-hidden rounded-tr-[120px] rounded-bl-[48px] bg-blush-soft">
+            <div className="relative aspect-square overflow-hidden bg-blush-soft">
               <img
                 src={product.image}
                 alt={product.name}
@@ -113,28 +113,28 @@ function ProdutoDetalhe() {
                 height={1024}
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <span className="absolute left-6 top-6 rounded-full bg-background/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum backdrop-blur">
+              <span className="absolute left-5 top-5 text-[10px] font-semibold uppercase tracking-[0.25em] text-paper mix-blend-difference">
                 {categoryLabel[product.category]}
               </span>
             </div>
 
             <div className="flex flex-col justify-center gap-8">
-              <div className="space-y-4">
-                <span className="inline-flex rounded-full bg-lavender-soft px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-plum">
+              <div className="space-y-5">
+                <span className="section-number text-sm">
                   {categoryLabel[product.category]}
                 </span>
-                <h1 className="font-display text-4xl leading-[1.05] text-plum md:text-5xl">
+                <h1 className="font-display text-5xl leading-[0.95] tracking-[-0.02em] text-ink md:text-6xl">
                   {product.name}
                 </h1>
-                <p className="text-lg leading-relaxed text-muted-foreground">
+                <p className="text-lg leading-[1.6] text-ink-soft">
                   {product.description}
                 </p>
-                <p className="text-2xl font-semibold text-lavender">
+                <p className="price-display rule pt-4 text-3xl text-clay">
                   {formatBRL(product.price)}
                 </p>
               </div>
 
-              <div className="space-y-3">
+              <div>
                 <button
                   type="button"
                   onClick={() => {
@@ -147,9 +147,9 @@ function ProdutoDetalhe() {
                       },
                     });
                   }}
-                  className="w-full rounded-full bg-lavender px-6 py-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-0.5 md:w-auto md:px-10"
+                  className="inline-flex w-full items-center justify-center gap-3 bg-ink px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-paper transition-colors hover:bg-clay md:w-auto"
                 >
-                  Adicionar ao carrinho
+                  Adicionar ao carrinho <span aria-hidden>→</span>
                 </button>
               </div>
 
